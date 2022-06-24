@@ -29,26 +29,26 @@
             Else
                 RestartTime("inwin") 'Otherwise restart Windows normally, instead of via API
             End If
-
-            'Open the correct GUI for the current phase
-            If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") < 10 Then 'Normal phases
-                Form1.Show()
-            ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 10 Then 'Uninstaller GUI
-                UninstallForm.Show()
-            ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 69 Then 'Removal phase
-                RemovalForm.Show()
-            ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") >= 97 And _
-                HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") <= 99 Then 'Restoration phases
-                RestorationForm.Show()
-            ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 102 Then 'Customisation stage 2
-                forCustomise = True
-                RestorationForm.Show()
-            ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") >= 103 Then 'Customisation stage 3+
-                forCustomise = True
-                Form1.Show()
-            End If
-            Me.Close()
         End If
+
+        'Open the correct GUI for the current phase
+        If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") < 10 Then 'Normal phases
+            Form1.Show()
+        ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 10 Then 'Uninstaller GUI
+            UninstallForm.Show()
+        ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 69 Then 'Removal phase
+            RemovalForm.Show()
+        ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") >= 97 And _
+            HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") <= 99 Then 'Restoration phases
+            RestorationForm.Show()
+        ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 102 Then 'Customisation stage 2
+            forCustomise = True
+            RestorationForm.Show()
+        ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") >= 103 Then 'Customisation stage 3+
+            forCustomise = True
+            Form1.Show()
+        End If
+        Me.Close()
     End Sub
 
     Private Sub PrepForm_Minimise(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.SizeChanged, MyBase.Resize
