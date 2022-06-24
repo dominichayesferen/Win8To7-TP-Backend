@@ -497,7 +497,7 @@ Partial Class UninstallForm
         Me.MaximizeBox = False
         Me.Name = "UninstallForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Uninstall - Win87 Transformation Pack Backend"
+        Me.Text = "Uninstall - Win8to7 Transformation Pack Backend"
         Me.Page1.ResumeLayout(False)
         Me.Page1.PerformLayout()
         Me.BackArea.ResumeLayout(False)
