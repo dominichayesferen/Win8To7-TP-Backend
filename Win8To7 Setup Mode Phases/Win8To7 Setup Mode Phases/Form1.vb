@@ -407,6 +407,8 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 'Go to Stage 104 (Customisation Stage 4)
                 HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("CurrentPhase", 104)
             End If
+    
+            Thread.Sleep(8000) 'Grant more time for programs to actually finish their installations
 
             AboutToRestart("")
             If forCustomise = False Then 'If this is the first transformation, and not an update of a prior transformation...
