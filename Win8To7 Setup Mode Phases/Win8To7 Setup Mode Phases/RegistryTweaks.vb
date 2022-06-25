@@ -359,7 +359,8 @@
         stringchanges.Add(ToList("HKLM\SOFTWARE\Classes\CLSID\{CB1B7F8C-C50A-4176-B604-9E24DEE8D4D1}", "System.Software.TasksFileUrl", "Internal"))
         stringchanges.Add(ToList("HKLM\SOFTWARE\Classes\CLSID\{CB1B7F8C-C50A-4176-B604-9E24DEE8D4D1}\DefaultIcon", "/ve", "%SystemRoot%\branding\shellbrd\shellbrd.dll"))
 
-
+        'Allow StartIsBack to run in Safe Mode
+        dwordchanges.Add(ToList("HKLM\SOFTWARE\StartIsBack", "EnableInSafeMode", "1"))
 
         SystemTweaks.Add("DWORD", dwordchanges)
         SystemTweaks.Add("String", stringchanges)
