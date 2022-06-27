@@ -1,4 +1,4 @@
-﻿Public Class PrepForm
+Public Class PrepForm
 #Region "Classic theme, because Classic theme's funny"
     <DllImport("uxtheme.dll", CharSet:=CharSet.Auto)> _
     Public Shared Sub SetThemeAppProperties(ByVal Flags As Integer)
@@ -165,19 +165,27 @@ high contrast.</a>
         If Form1.HKLMKey32.OpenSubKey("SOFTWARE\Win8To7") Is Nothing Then
             ChangeStatus("Checking for updates...")
             'Check updates are pending
-            Dim uSession As Object = CreateObject("Microsoft.Update.Session")
-            Dim uSearcher As Object = uSession.CreateUpdateSearcher()
-            uSearcher.Online = False
-            Dim sResult As Object = uSearcher.Search("IsInstalled=0 And IsHidden=0")
+            Try
+                Dim uSession As Object = CreateObject("Microsoft.Update.Session")
+                Dim uSearcher As Object = uSession.CreateUpdateSearcher()
+                uSearcher.Online = False
+                Dim sResult As Object = uSearcher.Search("IsInstalled=0 And IsHidden=0")
 
-            If sResult.Updates.Count > 0 Then
-                SetThemeAppProperties(0) 'now laugh
-                If MsgBox("Windows Updates are available for your system. It is best to apply these updates before transforming Windows 8 and 8.1, as Windows 8 suffers from a Windows-bricking issue without certain updates before February 2021. KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Windows 8 to Windows 7 Transformation Pack") = MsgBoxResult.Yes Then
+                If sResult.Updates.Count > 0 Then
+                    SetThemeAppProperties(0) 'now laugh
+                    If MsgBox("Windows Updates are available for your system. You should apply them before transforming, as updating your system with certain years-old-updates while transformed can brick your install of Windows, and lacking certain updates before February 2021 can make the transformation brick Windows entirely. KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.SystemModal, "Windows 8 to Windows 7 Transformation Pack") = MsgBoxResult.Yes Then
+                        SetThemeAppProperties(3)
+                    Else
+                        End
+                    End If
+                End If
+            Catch ex As Exception
+                If MsgBox("We couldn't check your Windows installation for available updates. Please be warned that updating your system with certain years-old-updates while transformed can brick your install of Windows, and lacking certain updates before February 2021 can make the transformation brick Windows entirely. KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.SystemModal, "Windows 8 to Windows 7 Transformation Pack") = MsgBoxResult.Yes Then
                     SetThemeAppProperties(3)
                 Else
                     End
                 End If
-            End If
+            End Try
         End If
         ChangeStatus("Loading...")
         CloseSplash()
