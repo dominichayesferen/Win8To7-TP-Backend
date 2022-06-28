@@ -267,23 +267,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{277BA0F1-D0BB-4D73-A2DF-6B60C91E1533}_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                     'SystemComponent means that it won't appear in Programs and Features - this is especially important for programs like UXThemePatcher
                 End If
-                ChangeProgress(30)
-
-                If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("AllowUXThemePatcher") = "true" And IO.File.Exists(storagelocation + "\SetupFiles\UXThemePatcher.exe") Then
-                    'Install UXThemePatcher
-                    Shell(storagelocation + "\SetupFiles\UXThemePatcher.exe /S", AppWinStyle.NormalFocus, True, 2400000)
-                    If Environment.Is64BitOperatingSystem = True Then
-                        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\UltraUXThemePatcher"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
-                    Else
-                        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\UltraUXThemePatcher"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
-                    End If
-                    Try
-                        IO.File.Delete(System.Environment.GetEnvironmentVariable("USERPROFILE") + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\UltraUXThemePatcher\Uninstall.lnk")
-                        'Make sure it's as hard as possible to uninstall UXThemePatcher as doing so WILL effectively BRICK Windows (unless done during restoration, that's the only exception)
-                    Catch 'Ignore this failing if it does somehow
-                    End Try
-                End If
-                ChangeProgress(40)
+                ChangeProgress(35)
 
                 If System.Environment.OSVersion.Version.Minor = 3 And Not IO.File.Exists(windrive + "Program Files\7+ Taskbar Tweaker\uninstall.exe") Then 'Don't need 7TT in 8.0 'cos Show Desktop's the correct size in 8.0
                     'Install 7TaskbarTweaker
@@ -374,7 +358,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 'Go to Stage 104 (Customisation Stage 4)
                 HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("CurrentPhase", 104)
             End If
-    
+
             Thread.Sleep(8000) 'Grant more time for programs to actually finish their installations
 
             AboutToRestart("")
@@ -407,8 +391,25 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 2 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SystemSetupInProgress /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
 
+            If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("AllowUXThemePatcher") = "true" And IO.File.Exists(storagelocation + "\SetupFiles\UXThemePatcher.exe") Then
+                'Install UXThemePatcher
+                Shell(storagelocation + "\SetupFiles\UXThemePatcher.exe /S", AppWinStyle.NormalFocus, True, 2400000)
+                ' Backend NOTE: Newer versions of UXThemePatcher no longer respect /S - if you need a modern version of UXThemePatcher, good luck I guess.
+                If Environment.Is64BitOperatingSystem = True Then
+                    Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\UltraUXThemePatcher"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
+                Else
+                    Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\UltraUXThemePatcher"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
+                End If
+                Try
+                    IO.File.Delete(System.Environment.GetEnvironmentVariable("USERPROFILE") + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\UltraUXThemePatcher\Uninstall.lnk")
+                    'Make sure it's as hard as possible to uninstall UXThemePatcher as doing so WILL effectively BRICK Windows (unless done during restoration, that's the only exception)
+                Catch 'Ignore this failing if it does somehow
+                End Try
+            End If
+
             'Delete now-pointless Setup Files
             Shell(windir + "\" + sysprefix + "\cmd.exe /c del /s /q /a /f """ + storagelocation + "\SetupFiles""")
+            ChangeProgress(25)
 
             'Now copy shell32.dll to shell32a.dll, as part of the anti-bricking setup
             If Not IO.File.Exists(windir + "\" + sysprefix + "\shell32a.dll") Then
@@ -419,7 +420,6 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                     Exit Sub
                 End Try
             End If
-            ChangeProgress(25)
             'Now that is done, change SHELL32.DLL dependency to be shell32a.dll to prevent Windows getting bricked by the next phase
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\ControlSet001\Control\Session Manager\KnownDLLs"" /v SHELL32 /t REG_SZ /d shell32a.dll /f", AppWinStyle.Hide, True)
             ChangeProgress(50)
