@@ -368,10 +368,8 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 Else
                     HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("HighContrast", 0)
                 End If
-                RestartTime("inwin") 'Restart Windows once complete
-            Else
-                RestartTime("") 'Go into next phase of Customisation / Updating
             End If
+            RestartTime("inwin") 'Restart Windows once complete
         Catch ex As Exception
             ErrorOccurred(ex.ToString())
             Exit Sub
