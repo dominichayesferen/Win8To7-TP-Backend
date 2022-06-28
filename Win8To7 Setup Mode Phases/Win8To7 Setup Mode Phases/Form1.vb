@@ -253,9 +253,6 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             ExtractEverything()
             ChangeProgress(10)
 
-            'Prevent softlocking as easily by automatically pressing SPACE if needed to push a button
-            Dim jobthread2 As Thread
-
             'First step: Run Installers
             'Install OldNewExplorer
             Shell(windir + "\" + sysprefix + "\cmd.exe /c regsvr32 " + windir + "\System32\OldNewExplorer\OldNewExplorer32.dll /s", AppWinStyle.NormalFocus, True, 2400000) 'OldNewExplorer doesn't have an installer,
@@ -266,10 +263,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 '(where we're doing this during an Update install), and UXThemePatcher would be a waste of time to 'install' given it's already installed (Update doesn't uninstall them)
                 If Not IO.File.Exists(windrive + "AeroGlass\unins000.exe") Then
                     'Install Glass8
-                    jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                    jobthread2.Start() 'Anti-softlock measure in case of an error occuring or whatever
                     Shell(storagelocation + "\SetupFiles\Glass8.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS= /NORESTART", AppWinStyle.NormalFocus, True, 2400000) 'Run in Quiet/Automatic mode
-                    jobthread2.Abort()
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{277BA0F1-D0BB-4D73-A2DF-6B60C91E1533}_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                     'SystemComponent means that it won't appear in Programs and Features - this is especially important for programs like UXThemePatcher
                 End If
@@ -277,10 +271,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
                 If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("AllowUXThemePatcher") = "true" And IO.File.Exists(storagelocation + "\SetupFiles\UXThemePatcher.exe") Then
                     'Install UXThemePatcher
-                    jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                    jobthread2.Start()
                     Shell(storagelocation + "\SetupFiles\UXThemePatcher.exe /S", AppWinStyle.NormalFocus, True, 2400000)
-                    jobthread2.Abort()
                     If Environment.Is64BitOperatingSystem = True Then
                         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\UltraUXThemePatcher"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                     Else
@@ -296,10 +287,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
                 If System.Environment.OSVersion.Version.Minor = 3 And Not IO.File.Exists(windrive + "Program Files\7+ Taskbar Tweaker\uninstall.exe") Then 'Don't need 7TT in 8.0 'cos Show Desktop's the correct size in 8.0
                     'Install 7TaskbarTweaker
-                    jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                    jobthread2.Start()
                     Shell(storagelocation + "\SetupFiles\7tt.exe /S /D=" + windrive + "Program Files\7+ Taskbar Tweaker", AppWinStyle.NormalFocus, True, 2400000)
-                    jobthread2.Abort()
                     IO.File.Delete(appdataroaming + "\Microsoft\Windows\Start Menu\Programs\7+ Taskbar Tweaker.lnk")
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\7 Taskbar Tweaker"" /f", AppWinStyle.Hide, True)
                 End If
@@ -308,30 +296,21 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
             If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7Games") = "true" And Not IO.File.Exists(windrive + "Program Files\Microsoft Games\unwin7games.exe") Then
                 'Install 7GamesPack
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(storagelocation + "\SetupFiles\7GamesInstaller.exe /S", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win7Games"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
             ChangeProgress(60)
 
             If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7TaskManager") = "true" And Not IO.File.Exists(windrive + "Program Files\ClassicTaskmgr\unins000.exe") Then
                 'Install Classic Task Manager
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(storagelocation + "\SetupFiles\ClassicTM.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Classic Task Manager+msconfig for Win 10 and 8_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
             ChangeProgress(70)
 
             If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7Gadgets") = "true" And Not IO.File.Exists(windir + "\Installer\Desktop Gadgets\unins000.exe") Then
                 'Install Windows Desktop Gadgets
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(storagelocation + "\SetupFiles\GadgetInstaller.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Windows Desktop Gadgets_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
             ChangeProgress(80)
@@ -340,10 +319,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 'Install Windows Media Center
                 If Not Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "Professional").ToString.StartsWith("ProfessionalWMC") And _
                     System.Environment.OSVersion.Version.Minor = 3 Then
-                    jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                    jobthread2.Start()
                     Shell(sysprefix + "\msiexec.exe /i " + storagelocation + "\SetupFiles\MediaCenter.msi /passive", AppWinStyle.NormalFocus, True, 2400000)
-                    jobthread2.Abort()
                 End If
                 If IO.File.Exists(windrive + "Users\Public\Desktop\Windows Media Center.lnk") Then
                     Try
@@ -357,18 +333,12 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
             'Install Open Shell, if selected
             If IO.File.Exists(storagelocation + "\SetupFiles\OpenShellSetup.exe") Then
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(storagelocation + "\SetupFiles\OpenShellSetup.exe /qn ADDLOCAL=StartMenu,Update", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F4B6EE58-F183-4B0D-930B-4480673C0F5B}"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
             'Install Ex7ForWin8, if selected
             If IO.File.Exists(storagelocation + "\SetupFiles\ex7forw8.exe") And Not IO.File.Exists(windir + "\explorer7\ex7forw8.exe") Then
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(storagelocation + "\SetupFiles\ex7forw8.exe /silent", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
                 If Environment.Is64BitOperatingSystem = True Then
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Ex7forW8"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                 Else
@@ -377,10 +347,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             End If
             'Install StartIsBack, if selected
             If IO.File.Exists(storagelocation + "\SetupFiles\StartIsBack.exe") And HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Start") = "startisback" Then
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(storagelocation + "\SetupFiles\StartIsBack.exe /elevated /silent", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
                 If Environment.Is64BitOperatingSystem = True Then
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\StartIsBack"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                 Else

@@ -511,13 +511,6 @@
             Thread.Sleep(400)
         End While
     End Sub
-
-    Sub AutomaticSpace()
-        While True
-            Thread.Sleep(80000)
-            My.Computer.Keyboard.SendKeys(" ", True)
-        End While
-    End Sub
 #End Region
 
 #Region "String translations"

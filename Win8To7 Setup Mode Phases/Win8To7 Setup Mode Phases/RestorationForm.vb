@@ -880,18 +880,12 @@ Do not turn off your computer.</a>
                 'Uninstall 7TaskbarTweaker (we'll delete the remaining keys, etc. later)
                 If IO.File.Exists(windrive + "Program Files\7+ Taskbar Tweaker\uninstall.exe") Then
                     Shell("taskkill /f /im ""7+ Taskbar Tweaker.exe""", AppWinStyle.Hide, True)
-                    jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                    jobthread2.Start() 'Anti-softlock measure in case of an error occuring or whatever
                     Shell(windrive + "Program Files\7+ Taskbar Tweaker\uninstall.exe /S /D=" + windrive + "Program Files\7+ Taskbar Tweaker", AppWinStyle.NormalFocus, True, 2400000)
-                    jobthread2.Abort()
                 End If
                 If IO.File.Exists(windrive + "AeroGlass\unins000.exe") Then
                     'Uninstall Glass8
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{277BA0F1-D0BB-4D73-A2DF-6B60C91E1533}_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                    jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                    jobthread2.Start()
                     Shell(windrive + "AeroGlass\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART", AppWinStyle.NormalFocus, True, 2400000)
-                    jobthread2.Abort()
                 End If
             End If
             If IO.Directory.Exists(windir + "\" + sysprefix + "\OldNewExplorer") Then
@@ -906,49 +900,31 @@ Do not turn off your computer.</a>
                 Else
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Ex7forW8"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
                 End If
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(windir + "\explorer7\ex7forw8.exe /uninstall /silent", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
             End If
 
             'Uninstall Open Shell
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F4B6EE58-F183-4B0D-930B-4480673C0F5B}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-            jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-            jobthread2.Start()
             Shell(windir + "\" + sysprefix + "\msiexec.exe /X{F4B6EE58-F183-4B0D-930B-4480673C0F5B} /passive /norestart", AppWinStyle.NormalFocus, True, 2400000)
-            jobthread2.Abort()
 
             If IO.File.Exists(windrive + "Program Files\Microsoft Games\unwin7games.exe") Then
                 'Uninstall 7GamesPack
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win7Games"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(windrive + "Program Files\Microsoft Games\unwin7games.exe /S", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
             End If
             If IO.File.Exists(windrive + "Program Files\ClassicTaskmgr\unins000.exe") Then
                 'Uninstall Classic Task Manager
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Classic Task Manager+msconfig for Win 10 and 8_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(windrive + "Program Files\ClassicTaskmgr\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
             End If
             If IO.File.Exists(windir + "\Installer\Desktop Gadgets\unins000.exe") Then
                 'Uninstall Windows Desktop Gadgets
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Windows Desktop Gadgets_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-                jobthread2.Start()
                 Shell(windir + "\Installer\Desktop Gadgets\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART", AppWinStyle.NormalFocus, True, 2400000)
-                jobthread2.Abort()
             End If
             'Uninstall Windows Media Center
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{99CCD11D-435B-4662-A48C-3AC046EC7014}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-            jobthread2 = New Thread(AddressOf Functions.AutomaticSpace)
-            jobthread2.Start()
             Shell(windir + "\" + sysprefix + "\msiexec.exe /X{99CCD11D-435B-4662-A48C-3AC046EC7014} /passive /norestart", AppWinStyle.NormalFocus, True, 2400000)
-            jobthread2.Abort()
 
             'Keep Explorer from running after SIB+ and co. is uninstalled
             jobthread2 = New Thread(AddressOf KillExplorer)
