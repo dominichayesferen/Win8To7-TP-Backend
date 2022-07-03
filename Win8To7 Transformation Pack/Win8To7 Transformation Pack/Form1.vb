@@ -908,7 +908,7 @@
             If isStarter = True Then 'Make some extra adjustments to files if Starter is detected
                 ' Delete aero.msstyles, copy aerostandard.msstyles to aero.msstyles, since Starter uses Basic
                 IO.File.Delete(storagelocation + "\FileReplacements\Windows\Resources\Themes\aero\aero.msstyles")
-                IO.File.Copy(storagelocation + "\FileReplacements\Windows\Resources\Thsemes\aero\aerostandard.msstyles", storagelocation + "\FileReplacements\Windows\Resources\Themes\aero\aero.msstyles", True)
+                IO.File.Copy(storagelocation + "\FileReplacements\Windows\Resources\Themes\aero\aerostandard.msstyles", storagelocation + "\FileReplacements\Windows\Resources\Themes\aero\aero.msstyles", True)
             End If
         Catch ex As Exception
             ErrorOccurred("Failed to make Starter-specific changes")
