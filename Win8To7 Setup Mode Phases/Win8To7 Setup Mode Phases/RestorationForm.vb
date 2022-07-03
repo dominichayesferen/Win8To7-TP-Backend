@@ -812,16 +812,24 @@ Do not turn off your computer.</a>
                     End If
                 Next
             Next
-            'Delete the existing VSCaches and restore old ones (MUST BE DONE HERE OR WINDOWS WILL BRICK)
-            fiArr = New IO.DirectoryInfo(windir + "\Resources\Themes\aero\VSCache").GetFiles() 'Get current VSCaches
-            For Each loopfileinfo In fiArr
-                Try 'Delete modified VS Caches
-                    IO.File.Delete(loopfileinfo.FullName)
+            If IO.Directory.Exists(windir + "\Resources\Themes\aero\VSCache") Then
+                'Delete the existing VSCaches and restore old ones (MUST BE DONE HERE OR WINDOWS WILL BRICK)
+                fiArr = New IO.DirectoryInfo(windir + "\Resources\Themes\aero\VSCache").GetFiles() 'Get current VSCaches
+                For Each loopfileinfo In fiArr
+                    Try 'Delete modified VS Caches
+                        IO.File.Delete(loopfileinfo.FullName)
+                    Catch ex As Exception
+                        ErrorOccurred("Failed to delete modified Visual Style Cache " + loopfileinfo.FullName + ": " + ex.ToString())
+                        Exit Sub
+                    End Try
+                Next
+            Else
+                Try
+                    IO.Directory.CreateDirectory(windir + "\Resources\Themes\aero\VSCache")
                 Catch ex As Exception
-                    ErrorOccurred("Failed to delete modified Visual Style Cache " + loopfileinfo.FullName + ": " + ex.ToString())
-                    Exit Sub
+                    ErrorOccurred("Failed to make VSCache folder for unmodified Visual Style Caches to move back to: " + ex.ToString())
                 End Try
-            Next
+            End If
             fiArr = New IO.DirectoryInfo(storagelocation + "\VSCaches").GetFiles() 'Get original VSCaches
             For Each loopfileinfo In fiArr
                 Try 'Restore original VS Caches
