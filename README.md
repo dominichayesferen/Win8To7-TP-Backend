@@ -1,5 +1,5 @@
 # Win8to7 Transformation Pack Backend
-The official openly forkable backend release of Win8To7 Transformation Pack's installer
+The official openly forkable Windows transformation pack backend, made in Visual Basic 2010 Express.
 
 The Win8To7 Transformation Pack Backend project is the open source installer backend that powers transformation packs such as Windows 8 to Windows 7 Transformation Pack.
 
