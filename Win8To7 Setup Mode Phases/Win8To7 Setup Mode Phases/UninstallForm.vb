@@ -169,7 +169,7 @@
         PageConfirmRemove.Visible = False
 
         Try
-            IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\Win8To7uninstall.exe", True)
+            IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\win8to7uninstall.exe", True)
         Catch ex As Exception
             ErrorOccurred("Failed to write Removal Executable: " + ex.Message)
             Exit Sub
@@ -247,7 +247,7 @@
         HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("CurrentPhase", 69)
 
         'Switch to progress form
-        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\Win8To7uninstall.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\win8to7uninstall.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v OOBEInProgress /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupPhase /t REG_DWORD /d 4 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 2 /f", AppWinStyle.Hide, True)
