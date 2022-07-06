@@ -487,7 +487,7 @@
                 End If
 
                 'Now copy the new file into the temporary path
-                If WriteFileFromResources(dictEntry.Key.ToString(), windir + "\" + sysprefix + "\Win8ToVista\" + targetPath) = False Then
+                If WriteFileFromResources(dictEntry.Key.ToString(), windir + "\" + sysprefix + "\Win8To7\" + targetPath) = False Then
                     Thread.Sleep(10000)
                     ErrorOccurred("Failed to write background processes to disk")
                     Return False
