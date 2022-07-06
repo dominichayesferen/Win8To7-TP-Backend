@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub Form1_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        MsgBox("This operation cannot be cancelled.", MsgBoxStyle.Exclamation, "Win8to7 Transformation Pack Backend") 'lool Startup Repair reference
+        MsgBox("This operation cannot be cancelled.", MsgBoxStyle.Exclamation, "Win8To7 Transformation Pack Backend") 'lool Startup Repair reference
         e.Cancel = True 'Instead of closing, the Form just gets out-right ended anyway.
     End Sub
 
@@ -71,7 +71,7 @@
     Sub Phase2()
         Try
             'Make sure Windows is still in Setup Mode, in case an unexpected shutdown suddenly occurs
-            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\win8to7uninstall.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\Win8To7uninstall.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v OOBEInProgress /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupPhase /t REG_DWORD /d 4 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 2 /f", AppWinStyle.Hide, True)
@@ -127,7 +127,7 @@
                 End While
             Next
 
-            'DELETE WIN8TO7 SYSTEM-WIDE FOLDER
+            'DELETE Win8To7 SYSTEM-WIDE FOLDER
             SetProgress("Deleting Win8To7 backups and files...")
             tries = 0
             While Not tries = 10

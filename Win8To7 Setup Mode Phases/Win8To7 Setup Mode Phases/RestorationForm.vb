@@ -79,13 +79,13 @@ Do not turn off your computer.</a>
         Dim animthread As New Thread(AddressOf AnimProgress)
         animthread.Start()
 
-        If HKLMKey32.OpenSubKey("software\win8to7").GetValue("currentphase") = 97 Then
+        If HKLMKey32.OpenSubKey("software\Win8To7").GetValue("currentphase") = 97 Then
             Dim jobthread As New Thread(AddressOf Phase2)
             jobthread.Start()
-        ElseIf HKLMKey32.OpenSubKey("software\win8to7").GetValue("currentphase") = 98 Then
+        ElseIf HKLMKey32.OpenSubKey("software\Win8To7").GetValue("currentphase") = 98 Then
             Dim jobthread As New Thread(AddressOf Phase3)
             jobthread.Start()
-        ElseIf HKLMKey32.OpenSubKey("software\win8to7").GetValue("currentphase") = 99 Then
+        ElseIf HKLMKey32.OpenSubKey("software\Win8To7").GetValue("currentphase") = 99 Then
             Dim jobthread As New Thread(AddressOf Phase4)
             jobthread.Start()
         ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 102 Then 'Stage 102 = Restoration Stage 3, but abridged
@@ -457,7 +457,7 @@ Do not turn off your computer.</a>
                         Exit Sub
                     End If
                 End If
-                
+
                 doneTasks += 1 'Add 1 to doneTasks
             Next
 
@@ -869,7 +869,7 @@ Do not turn off your computer.</a>
 
                 'Copy setup executable to TEMP folder for final stage
                 Try
-                    IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\win8to7restore.exe", True)
+                    IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\Win8To7restore.exe", True)
                 Catch ex As Exception
                     ErrorOccurred("Failed to copy Restoration Executable to the Temp folder for the next stage of restoration" + ": " + ex.ToString())
                     Exit Sub
@@ -956,7 +956,7 @@ Do not turn off your computer.</a>
                 'Boot into installer once again for Phase 4 with the Setup Mode
                 HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("CurrentPhase", 99)
 
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\win8to7restore.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\Win8To7restore.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
             Else
                 'Do some extra cleanup with Phase 4
                 Phase4(True)
@@ -998,7 +998,7 @@ Do not turn off your computer.</a>
 
             If forCustomise = False Then
                 'Make sure Windows is still in Setup Mode, in case an unexpected shutdown suddenly occurs
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\win8to7restore.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\Win8To7restore.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v OOBEInProgress /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupPhase /t REG_DWORD /d 4 /f", AppWinStyle.Hide, True)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 2 /f", AppWinStyle.Hide, True)

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label5.Text" xml:space="preserve">
-    <value>Win8to7 Transformation Pack Backend is currently being removed from your system. Once done, your system will restart to finish off the removal process.
+    <value>Win8To7 Transformation Pack Backend is currently being removed from your system. Once done, your system will restart to finish off the removal process.
 
 Once the Transformation Pack has been removed, you won't be able to restore Windows to how it was before transforming it, and will no longer be able to configure the transformation without installing it again.</value>
   </data>

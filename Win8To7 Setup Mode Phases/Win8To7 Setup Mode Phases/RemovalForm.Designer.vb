@@ -71,7 +71,7 @@ Partial Class RemovalForm
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(284, 15)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Removing Win8to7 Transformation Pack Backend"
+        Me.Label3.Text = "Removing Win8To7 Transformation Pack Backend"
         '
         'Label1
         '

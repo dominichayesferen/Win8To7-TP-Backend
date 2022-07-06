@@ -947,7 +947,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 Next
             Next
             'Add installer to control
-            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayName"" /t REG_SZ /d ""Win8to7 Transformation Pack Backend"" /f", AppWinStyle.Hide, True)
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayName"" /t REG_SZ /d ""Win8To7 Transformation Pack Backend"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayVersion"" /t REG_SZ /d ""3.1"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayIcon"" /t REG_SZ /d """ + storagelocation + "\SetupTools\setup.exe"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""InstallLocation"" /t REG_SZ /d """ + storagelocation + "\SetupTools""\ /f", AppWinStyle.Hide, True)
@@ -957,7 +957,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""VersionMajor"" /t REG_SZ /d 3 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""VersionMinor"" /t REG_SZ /d 1 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""Publisher"" /t REG_SZ /d ""ImSwordKing and co."" /f", AppWinStyle.Hide, True)
-            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""Comments"" /t REG_SZ /d ""Uninstall Win8to7 Transformation Pack Backend, or revert Windows to how it was before transforming"" /f", AppWinStyle.Hide, True)
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""Comments"" /t REG_SZ /d ""Uninstall Win8To7 Transformation Pack Backend, or revert Windows to how it was before transforming"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""URLInfoAbout"" /t REG_SZ /d ""https://forum.eclectic4un.me/viewtopic.php?f=29&t=107"" /f", AppWinStyle.Hide, True)
 
             'End the progress thread, and change the progress to 100

@@ -86,9 +86,9 @@ Partial Class Credits
         Me.Label3.Location = New System.Drawing.Point(7, 87)
         Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(322, 17)
+        Me.Label3.Size = New System.Drawing.Size(377, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Win8to7 Transformation Pack Backend Backend created by:"
+        Me.Label3.Text = "Win8To7 Transformation Pack Backend Backend created by:"
         '
         'Label5
         '
@@ -97,9 +97,9 @@ Partial Class Credits
         Me.Label5.Margin = New System.Windows.Forms.Padding(3)
         Me.Label5.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(365, 26)
+        Me.Label5.Size = New System.Drawing.Size(413, 26)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Dominic Hayes: Created the Win8to7 Transformation Pack Backend backend"
+        Me.Label5.Text = "Dominic Hayes: Created the Win8To7 Transformation Pack Backend backend"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label11
@@ -505,7 +505,7 @@ Partial Class Credits
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Credits"
-        Me.Text = "Credits - Win8to7 Transformation Pack Backend"
+        Me.Text = "Credits - Win8To7 Transformation Pack Backend"
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.Panel20.ResumeLayout(False)

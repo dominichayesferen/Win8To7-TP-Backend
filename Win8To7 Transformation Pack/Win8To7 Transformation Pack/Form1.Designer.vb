@@ -1291,7 +1291,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Install - Win8to7 Transformation Pack Backend"
+        Me.Text = "Install - Win8To7 Transformation Pack Backend"
         Me.Page1.ResumeLayout(False)
         Me.Page1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

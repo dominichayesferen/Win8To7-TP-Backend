@@ -65,7 +65,7 @@
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If PageTransform.Visible = True Then
-            MsgBox("Installation of Win8to7 Transformation Pack Backend cannot be cancelled, as cancelling the transformation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Win8to7 Transformation Pack Backend")
+            MsgBox("Installation of Win8To7 Transformation Pack Backend cannot be cancelled, as cancelling the transformation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Win8To7 Transformation Pack Backend")
             e.Cancel = True
         End If
     End Sub
@@ -252,7 +252,7 @@
 
     Private Sub CheckBox5_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles AllowUXThemePatcher.CheckedChanged
         If AllowUXThemePatcher.Checked = False Then
-            If MsgBox("Not patching your system with UXThemePatcher SHOULD ONLY BE DONE if you have already patched your system to be able to use custom themes already. If not patched, the transformation will brick your current Windows installation. Are you SURE you want to continue without patching your system with UXThemePatcher?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Win8to7 Transformation Pack Backend") = MsgBoxResult.No Then
+            If MsgBox("Not patching your system with UXThemePatcher SHOULD ONLY BE DONE if you have already patched your system to be able to use custom themes already. If not patched, the transformation will brick your current Windows installation. Are you SURE you want to continue without patching your system with UXThemePatcher?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Win8To7 Transformation Pack Backend") = MsgBoxResult.No Then
                 AllowUXThemePatcher.Checked = True
             End If
         End If
@@ -357,7 +357,7 @@
             ChangeProgress(1)
             ChangeProgressStyle(ProgressBarStyle.Marquee)
             Shell(sysprefix + "\cmd.exe /c reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
-            Shell(sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before installing Win8to7 Transformation Pack Backend"", 100, 12", AppWinStyle.Hide, True)
+            Shell(sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before installing Win8To7 Transformation Pack Backend"", 100, 12", AppWinStyle.Hide, True)
             Shell(sysprefix + "\cmd.exe /c reg del ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /f", AppWinStyle.Hide, True)
             ChangeProgressStyle(ProgressBarStyle.Continuous)
 

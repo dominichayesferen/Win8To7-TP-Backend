@@ -38,7 +38,7 @@
 
     Private Sub UninstallForm_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If PageTransform.Visible = True Then
-            MsgBox("This operation cannot be cancelled, as cancelling this operation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Win8to7 Transformation Pack Backend")
+            MsgBox("This operation cannot be cancelled, as cancelling this operation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Win8To7 Transformation Pack Backend")
             e.Cancel = True
         End If
     End Sub
@@ -169,7 +169,7 @@
         PageConfirmRemove.Visible = False
 
         Try
-            IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\win8to7uninstall.exe", True)
+            IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\Win8To7uninstall.exe", True)
         Catch ex As Exception
             ErrorOccurred("Failed to write Removal Executable: " + ex.Message)
             Exit Sub
@@ -191,7 +191,7 @@
         ChangeProgress(1)
         ChangeProgressStyle(ProgressBarStyle.Marquee)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
-        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before uninstalling Win8to7 Transformation Pack Backend"", 100, 12", AppWinStyle.Hide, True)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before uninstalling Win8To7 Transformation Pack Backend"", 100, 12", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg del ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /f", AppWinStyle.Hide, True)
         ChangeProgressStyle(ProgressBarStyle.Continuous)
 
@@ -225,7 +225,7 @@
         ChangeProgress(1)
         ChangeProgressStyle(ProgressBarStyle.Marquee)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
-        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before deleting Win8to7 Transformation Pack Backend backups"", 100, 12", AppWinStyle.Hide, True)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before deleting Win8To7 Transformation Pack Backend backups"", 100, 12", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg del ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /f", AppWinStyle.Hide, True)
         ChangeProgressStyle(ProgressBarStyle.Continuous)
 
@@ -247,7 +247,7 @@
         HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("CurrentPhase", 69)
 
         'Switch to progress form
-        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\win8to7uninstall.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\Win8To7uninstall.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v OOBEInProgress /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupPhase /t REG_DWORD /d 4 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 2 /f", AppWinStyle.Hide, True)

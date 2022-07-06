@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TextBox1.Text" xml:space="preserve">
-    <value>Welcome to the open source installer release of the Win8to7 Transformation Pack Backend installer - "Win8to7 Transformation Pack Backend Backend"!
+    <value>Welcome to the open source installer release of the Win8To7 Transformation Pack Backend installer - "Win8To7 Transformation Pack Backend Backend"!
 
-By forking this software, or using this software, you agree that this program is licensed under the Unlicense License, and thus forking and usage of it is bound by the license terms of the Unlicense License. You should be able to find the license in your folder copy of Win8to7 Transformation Pack Backend's repository on GitHub, in a file called LICENSE.md, however if you cannot find it, it is written below in this terms and conditions page.
+By forking this software, or using this software, you agree that this program is licensed under the Unlicense License, and thus forking and usage of it is bound by the license terms of the Unlicense License. You should be able to find the license in your folder copy of Win8To7 Transformation Pack Backend's repository on GitHub, in a file called LICENSE.md, however if you cannot find it, it is written below in this terms and conditions page.
 
-When forking this program, be aware that most of the tools used in the Win8to7 Transformation Pack Backend's installer are either not present in the open source version of it, or are replaced with dummy executables to let you know you need to replace them. This is to prevent unauthorised redistribution of the software used by that installer in the open source release's repository, and to guarantee that any programs obtained are fresh copies of the programs' installer executables.
+When forking this program, be aware that most of the tools used in the Win8To7 Transformation Pack Backend's installer are either not present in the open source version of it, or are replaced with dummy executables to let you know you need to replace them. This is to prevent unauthorised redistribution of the software used by that installer in the open source release's repository, and to guarantee that any programs obtained are fresh copies of the programs' installer executables.
 
 Unlicense License:
 This is free and unencumbered software released into the public domain.

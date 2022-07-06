@@ -195,7 +195,7 @@ Partial Class ErrorScreen
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(7, 5, 7, 5)
         Me.Name = "ErrorScreen"
-        Me.Text = "Win8to7 Transformation Pack Backend"
+        Me.Text = "Win8To7 Transformation Pack Backend"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
