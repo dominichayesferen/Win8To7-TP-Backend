@@ -151,7 +151,7 @@ Partial Class RestorationForm
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "RestorationForm"
-        Me.Text = "Restoring - Win8To7 Transformation Pack Backend"
+        Me.Text = "Restoring - Win8to7 Transformation Pack Backend"
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ProgressAnim.ResumeLayout(False)

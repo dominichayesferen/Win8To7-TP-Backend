@@ -69,9 +69,9 @@ Partial Class RemovalForm
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(26, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(272, 15)
+        Me.Label3.Size = New System.Drawing.Size(284, 15)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Removing Win87 Transformation Pack Backend"
+        Me.Label3.Text = "Removing Win8to7 Transformation Pack Backend"
         '
         'Label1
         '

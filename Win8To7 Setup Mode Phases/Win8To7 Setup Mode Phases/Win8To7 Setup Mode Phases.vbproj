@@ -203,6 +203,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RemovalForm.resx">
       <DependentUpon>RemovalForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RestorationForm.resx">
       <DependentUpon>RestorationForm.vb</DependentUpon>

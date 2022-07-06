@@ -1110,6 +1110,7 @@ Do not turn off your computer.</a>
                 'DELETE FILES AND PROGRAM-LEFTOVERS
                 programdirstodelete.Add(storagelocation.ToString())
                 programdirstodelete.Add(windir + "\System32\OldNewExplorer")
+                programdirstodelete.Add(windir + "\System32\Win8To7")
                 programdirstodelete.Add(windrive + "AeroGlass")
                 programdirstodelete.Add(windrive + "Program Files\7+ Taskbar Tweaker")
                 If UXThemePatcherAllowed = "true" Then

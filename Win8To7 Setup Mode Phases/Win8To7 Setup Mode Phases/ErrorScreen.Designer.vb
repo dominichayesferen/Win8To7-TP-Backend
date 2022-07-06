@@ -59,7 +59,7 @@ Partial Class ErrorScreen
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(960, 32)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Windows 8 to Windows 7 Transformation Pack"
+        Me.Label2.Text = "(title is added here in runtime)"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2

@@ -5,10 +5,6 @@
     Public UserClassTweaks As New Dictionary(Of String, List(Of List(Of String)))
     Private sibdir As String
     Private openshelldir As String
-    Private windrive = IO.Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System))
-    Private windir As String = System.Environment.GetEnvironmentVariable("WINDIR")
-    Private sysprefix As String
-    Private storagelocation = windir + "\Win8To7"
 
 
     Public Sub init()
@@ -19,12 +15,6 @@
             sibdir = windrive + "Program Files\StartIsBack"
         End If
         openshelldir = windrive + "Program Files\Open-Shell"
-
-        If System.IO.File.Exists(windir + "\SysNative\LogonUI.exe") Then
-            sysprefix = windir + "\SysNative"
-        Else
-            sysprefix = windir + "\System32"
-        End If
 
         PopulateSystemTweaks()
         PopulateUserTweaks()
@@ -1135,7 +1125,7 @@
         Else
             slashd = ""
         End If
-        Shell(sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_SZ " + slashd + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_SZ " + slashd + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Public Sub SetEXPANDSZ(ByVal Key As String, ByVal Value As String, ByVal Data As String, Optional ByVal wait As Boolean = True)
@@ -1163,7 +1153,7 @@
         Else
             slashd = ""
         End If
-        Shell(sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_EXPAND_SZ " + slashd + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_EXPAND_SZ " + slashd + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Public Sub SetMultiSZ(ByVal Key As String, ByVal Value As String, ByVal Data As String, Optional ByVal wait As Boolean = True)
@@ -1191,7 +1181,7 @@
         Else
             slashd = ""
         End If
-        Shell(sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_MULTI_SZ " + slashd + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_MULTI_SZ " + slashd + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Public Function ConvertToBinHex(ByVal Data As String)
@@ -1239,7 +1229,7 @@
         Else
             slashd = ""
         End If
-        Shell(sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_BINARY " + slashd + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_BINARY " + slashd + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Public Function ConvertToDWORD(ByVal Data As String)
@@ -1278,7 +1268,7 @@
         Else
             slashd = ""
         End If
-        Shell(sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_DWORD " + slashd + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD " + newKey + " /v " + newValue + " /t REG_DWORD " + slashd + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Public Sub SetDefaultStr(ByVal Key As String, ByVal Data As String, Optional ByVal wait As Boolean = True)
@@ -1300,7 +1290,7 @@
         Else
             slashd = ""
         End If
-        Shell(sysprefix + "\cmd.exe /c reg ADD " + newKey + " /ve " + slashd + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD " + newKey + " /ve " + slashd + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Public Sub DeleteKey(ByVal Key As String, ByVal Value As String, Optional ByVal wait As Boolean = True)
@@ -1317,7 +1307,7 @@
             newValue = Value
         End If
 
-        Shell(sysprefix + "\cmd.exe /c reg DELETE " + newKey + " /v " + newValue + " /f", AppWinStyle.Hide, wait)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE " + newKey + " /v " + newValue + " /f", AppWinStyle.Hide, wait)
     End Sub
 
     Function translate(ByVal input As String)

@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Win8To7 Transformation Pack Backend")> 
+<Assembly: AssemblyTitle("Win8to7 Transformation Pack Backend Backend")> 
 <Assembly: AssemblyDescription("Open Source version of Win8To7 for Transformation Pack Creation")> 
 <Assembly: AssemblyCompany("That Linux Dude Dominic Hayes")> 
-<Assembly: AssemblyProduct("Win8To7 Transformation Pack Backend")> 
+<Assembly: AssemblyProduct("Win8to7 Transformation Pack Backend Backend")> 
 <Assembly: AssemblyCopyright("Licensed under Unlicense License")>
 <Assembly: AssemblyTrademark("")> 
 

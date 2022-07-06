@@ -15,7 +15,7 @@
         SetWindowTheme(Me.ProgressBar1.Handle, "", Nothing) 'The progressbar otherwise doesn't use the proper theme
         RemovalBG.Show()
 
-        If HKLMKey32.OpenSubKey("software\win8to7").GetValue("currentphase") = 69 Then
+        If HKLMKey32.OpenSubKey("Software\Win8To7").GetValue("currentphase") = 69 Then
             Dim jobthread As New Thread(AddressOf Phase2)
             jobthread.Start()
         Else
@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub Form1_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        MsgBox("This operation cannot be cancelled.", MsgBoxStyle.Exclamation, "Windows 8 to Windows 7 Transformation Pack") 'lool Startup Repair reference
+        MsgBox("This operation cannot be cancelled.", MsgBoxStyle.Exclamation, "Win8to7 Transformation Pack Backend") 'lool Startup Repair reference
         e.Cancel = True 'Instead of closing, the Form just gets out-right ended anyway.
     End Sub
 

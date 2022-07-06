@@ -230,7 +230,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 'DELETE FILES AND PROGRAM-LEFTOVERS FROM OLD TRANSFORMATION PACK VERSION
                 Dim tries As Integer 'Delete and re-create directories, first.
                 For Each direc In {storagelocation + "\SetupFiles", windir + "\Temp\Win8To7DiscardedFiles", windir + "\" + sysprefix + "\OldNewExplorer", _
-                                   windrive + "Program Files\Microsoft Games", windrive + "Program Files\ClassicTaskmgr", _
+                                   windrive + "Program Files\Microsoft Games", windrive + "Program Files\ClassicTaskmgr", windir + "\" + sysprefix + "\Win8To7", _
                                    windrive + "Program Files (x86)\Windows Sidebar", windrive + "Program Files\Windows Sidebar", windir + "\explorer7", _
                                    windrive + "Program Files (x86)\StartIsBack", windrive + "Program Files\StartIsBack", windrive + "Program Files\Open-Shell"} 'NOTE: At this point, we already uninstalled these programs.
                     tries = 0
@@ -250,7 +250,9 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Win8To7GS"" /v ""Branding"" /t REG_SZ /d """ + HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Branding") + """ /f", AppWinStyle.Hide, True)
 
             'Extract everything before running
-            ExtractEverything()
+            If ExtractEverything() = False Then 'Abort if extracting fails
+                Exit Sub
+            End If
             ChangeProgress(10)
 
             'First step: Run Installers
@@ -648,7 +650,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                     'Second, run Resource Hacker to patch the file
                     startInfo = New System.Diagnostics.ProcessStartInfo
                     startInfo.FileName = storagelocation + "\SetupTools\ResourceHacker.exe"
-                    startInfo.Arguments = "-action addoverwrite -open " + reslessname + " -save " + reslessname + " -resource " + loopfileinfo.FullName
+                    startInfo.Arguments = "-action addoverwrite -open """ + reslessname + """ -save """ + reslessname + """ -resource """ + loopfileinfo.FullName + """"
                     startInfo.CreateNoWindow = True
                     startInfo.UseShellExecute = True
                     startInfo.WindowStyle = ProcessWindowStyle.Hidden
@@ -945,7 +947,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 Next
             Next
             'Add installer to control
-            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayName"" /t REG_SZ /d ""Windows 8 to Windows 7 Transformation Pack"" /f", AppWinStyle.Hide, True)
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayName"" /t REG_SZ /d ""Win8to7 Transformation Pack Backend"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayVersion"" /t REG_SZ /d ""3.1"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""DisplayIcon"" /t REG_SZ /d """ + storagelocation + "\SetupTools\setup.exe"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""InstallLocation"" /t REG_SZ /d """ + storagelocation + "\SetupTools""\ /f", AppWinStyle.Hide, True)
@@ -955,7 +957,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""VersionMajor"" /t REG_SZ /d 3 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""VersionMinor"" /t REG_SZ /d 1 /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""Publisher"" /t REG_SZ /d ""ImSwordKing and co."" /f", AppWinStyle.Hide, True)
-            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""Comments"" /t REG_SZ /d ""Uninstall Windows 8 to Windows 7 Transformation Pack, or revert Windows to how it was before transforming"" /f", AppWinStyle.Hide, True)
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""Comments"" /t REG_SZ /d ""Uninstall Win8to7 Transformation Pack Backend, or revert Windows to how it was before transforming"" /f", AppWinStyle.Hide, True)
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Win8To7TransformationPack"" /v ""URLInfoAbout"" /t REG_SZ /d ""https://forum.eclectic4un.me/viewtopic.php?f=29&t=107"" /f", AppWinStyle.Hide, True)
 
             'End the progress thread, and change the progress to 100

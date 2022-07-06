@@ -65,7 +65,7 @@
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If PageTransform.Visible = True Then
-            MsgBox("Installation of Win8To7 Transformation Pack cannot be cancelled, as cancelling the transformation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Windows 8 to Windows 7 Transformation Pack")
+            MsgBox("Installation of Win8to7 Transformation Pack Backend cannot be cancelled, as cancelling the transformation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Win8to7 Transformation Pack Backend")
             e.Cancel = True
         End If
     End Sub
@@ -239,14 +239,6 @@
         PageConfirm.Visible = True
         Page5.Visible = False
     End Sub
-
-    Private Sub CheckBox5_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles AllowUXThemePatcher.CheckedChanged
-        If AllowUXThemePatcher.Checked = False Then
-            If MsgBox("Not patching your system with UXThemePatcher SHOULD ONLY BE DONE if you have already patched your system to be able to use custom themes already. If not patched, the transformation will brick your current Windows installation. Are you SURE you want to continue without patching your system with UXThemePatcher?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Windows 8 to Windows 7 Transformation Pack") = MsgBoxResult.No Then
-                AllowUXThemePatcher.Checked = True
-            End If
-        End If
-    End Sub
 #End Region
 #Region "Confirmation page"
     Private Sub NextConfirm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NextConfirm.Click
@@ -256,6 +248,14 @@
 
         Dim jobthread As New Thread(AddressOf DoTheJob)
         jobthread.Start()
+    End Sub
+
+    Private Sub CheckBox5_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles AllowUXThemePatcher.CheckedChanged
+        If AllowUXThemePatcher.Checked = False Then
+            If MsgBox("Not patching your system with UXThemePatcher SHOULD ONLY BE DONE if you have already patched your system to be able to use custom themes already. If not patched, the transformation will brick your current Windows installation. Are you SURE you want to continue without patching your system with UXThemePatcher?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Win8to7 Transformation Pack Backend") = MsgBoxResult.No Then
+                AllowUXThemePatcher.Checked = True
+            End If
+        End If
     End Sub
 #End Region
 
@@ -357,7 +357,7 @@
             ChangeProgress(1)
             ChangeProgressStyle(ProgressBarStyle.Marquee)
             Shell(sysprefix + "\cmd.exe /c reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
-            Shell(sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before installing Win8To7 Transformation Pack"", 100, 12", AppWinStyle.Hide, True)
+            Shell(sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before installing Win8to7 Transformation Pack Backend"", 100, 12", AppWinStyle.Hide, True)
             Shell(sysprefix + "\cmd.exe /c reg del ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /f", AppWinStyle.Hide, True)
             ChangeProgressStyle(ProgressBarStyle.Continuous)
 
@@ -857,8 +857,19 @@
         End Try
         Try
             ' MEDIACENTER -> Windows Media Center directory
-            If IO.Directory.Exists(windir + "\ehome") Then
-                'Make sure that StartIsBack folder is moved to correct place in both patching folders
+            If AllowMediaCenter.Checked = True Then
+                'Make sure that Windows Media Center folder is moved to correct place in both patching folders
+                For Each directory In {storagelocation + "\FileReplacements", storagelocation + "\ResFiles"}
+                    If IO.Directory.Exists(directory + "\MEDIACENTER") Then
+                        For Each item In {directory + "\Program Files", directory + "\Program Files\Windows Media Center"}
+                            If Not IO.Directory.Exists(item) Then
+                                IO.Directory.CreateDirectory(item)
+                            End If
+                        Next
+                        IO.Directory.Move(directory + "\MEDIACENTER", directory + "\Program Files\Windows Media Center\ehome")
+                    End If
+                Next
+            Else
                 For Each directory In {storagelocation + "\FileReplacements", storagelocation + "\ResFiles"}
                     If IO.Directory.Exists(directory + "\MEDIACENTER") Then
                         'Make the parent directories if they don't exist yet
@@ -869,17 +880,6 @@
                         Next
                         'Now move the folder, and rename it, to intended parent directory
                         IO.Directory.Move(directory + "\MEDIACENTER", directory + "\Windows\ehome")
-                    End If
-                Next
-            Else
-                For Each directory In {storagelocation + "\FileReplacements", storagelocation + "\ResFiles"}
-                    If IO.Directory.Exists(directory + "\MEDIACENTER") Then
-                        For Each item In {directory + "\Program Files", directory + "\Program Files\Windows Media Center"}
-                            If Not IO.Directory.Exists(item) Then
-                                IO.Directory.CreateDirectory(item)
-                            End If
-                        Next
-                        IO.Directory.Move(directory + "\MEDIACENTER", directory + "\Program Files\Windows Media Center\ehome")
                     End If
                 Next
             End If

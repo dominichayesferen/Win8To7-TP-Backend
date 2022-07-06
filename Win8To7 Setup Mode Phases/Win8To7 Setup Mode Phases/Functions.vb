@@ -335,14 +335,14 @@
 #End Region
 
 #Region "Resource/File Extraction"
-    Sub ExtractEverything()
+    Function ExtractEverything()
         'Before we do that, we need to make sure the directories exist
-        For Each direc In {storagelocation + "\SetupFiles", storagelocation + "\SetupTools", windir + "\" + sysprefix + "\OldNewExplorer"}
+        For Each direc In {storagelocation + "\SetupFiles", storagelocation + "\SetupTools", windir + "\" + sysprefix + "\OldNewExplorer", windir + "\" + sysprefix + "\Win8To7"}
             Try
                 CreateDir(direc)
             Catch ex As Exception
                 ErrorOccurred("Failed to create directory for programs extraction - " + direc + ": " + ex.ToString())
-                Exit Sub
+                Return False
             End Try
         Next
 
@@ -445,7 +445,7 @@
                 'Now copy the new file into the temporary path
                 If WriteFileFromResources(dictEntry.Key.ToString(), storagelocation + "\SetupFiles\" + targetPath) = False Then
                     ErrorOccurred("Failed to write setup executables to disk")
-                    Exit Sub
+                    Return False
                 End If
             End If
 
@@ -457,7 +457,7 @@
                 'Now copy the new file into the temporary path
                 If WriteFileFromResources(dictEntry.Key.ToString(), storagelocation + "\SetupTools\" + targetPath) = False Then
                     ErrorOccurred("Failed to write required setup tools to disk")
-                    Exit Sub
+                    Return False
                 End If
             End If
 
@@ -473,11 +473,29 @@
                 'Now copy the new file into the temporary path
                 If WriteFileFromResources(dictEntry.Key.ToString(), windir + "\" + sysprefix + "\OldNewExplorer\" + targetPath) = False Then
                     ErrorOccurred("Failed to write OldNewExplorer files to disk")
-                    Exit Sub
+                    Return False
+                End If
+            End If
+
+            'Fourth, deal with background process files
+            If targetPath.StartsWith("setupbgproc:") Then
+                'Create directory for extraction, and directory for backup
+                targetPath = targetPath.Replace("setupbgproc:", "")
+
+                If IO.File.Exists(windir + "\" + sysprefix + "\Win8To7\" + targetPath) Then
+                    Continue For
+                End If
+
+                'Now copy the new file into the temporary path
+                If WriteFileFromResources(dictEntry.Key.ToString(), windir + "\" + sysprefix + "\Win8ToVista\" + targetPath) = False Then
+                    Thread.Sleep(10000)
+                    ErrorOccurred("Failed to write background processes to disk")
+                    Return False
                 End If
             End If
         Next
-    End Sub
+        Return True
+    End Function
 
     Function WriteFileFromResources(ByVal resourceID As String, ByVal targetPath As String)
         Dim audioStream As IO.MemoryStream

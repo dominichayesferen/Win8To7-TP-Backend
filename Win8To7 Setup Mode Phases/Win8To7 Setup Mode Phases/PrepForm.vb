@@ -14,7 +14,7 @@
         End If
 
         If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("TransformationFailed") = 1 Then 'If the transformation failed, don't continue running this
-            MsgBox("Windows 8 to Windows 7 Transformation Pack experienced an unexpected error. To install this transformation pack, restart the installation.")
+            MsgBox("Win8to7 Transformation Pack Backend experienced an unexpected error. To install this transformation pack, restart the installation.")
 
             'Go back into Windows as an emergency precaution as well
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /t REG_SZ /f", AppWinStyle.Hide, True)

@@ -38,7 +38,7 @@
 
     Private Sub UninstallForm_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If PageTransform.Visible = True Then
-            MsgBox("This operation cannot be cancelled, as cancelling this operation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Windows 8 to Windows 7 Transformation Pack")
+            MsgBox("This operation cannot be cancelled, as cancelling this operation can risk rendering Windows unusable.", MsgBoxStyle.Exclamation, "Win8to7 Transformation Pack Backend")
             e.Cancel = True
         End If
     End Sub
@@ -191,7 +191,7 @@
         ChangeProgress(1)
         ChangeProgressStyle(ProgressBarStyle.Marquee)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
-        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before uninstalling Win8To7 Transformation Pack"", 100, 12", AppWinStyle.Hide, True)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before uninstalling Win8to7 Transformation Pack Backend"", 100, 12", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg del ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /f", AppWinStyle.Hide, True)
         ChangeProgressStyle(ProgressBarStyle.Continuous)
 
@@ -225,7 +225,7 @@
         ChangeProgress(1)
         ChangeProgressStyle(ProgressBarStyle.Marquee)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
-        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before deleting Win8To7 Transformation Pack backups"", 100, 12", AppWinStyle.Hide, True)
+        Shell(windir + "\" + sysprefix + "\cmd.exe /c wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint ""Before deleting Win8to7 Transformation Pack Backend backups"", 100, 12", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg del ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore"" /v ""SystemRestorePointCreationFrequency"" /f", AppWinStyle.Hide, True)
         ChangeProgressStyle(ProgressBarStyle.Continuous)
 
