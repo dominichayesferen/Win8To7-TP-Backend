@@ -88,7 +88,7 @@ Partial Class Credits
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(377, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Win8To7 Transformation Pack Backend Backend created by:"
+        Me.Label3.Text = "Win8To7 Transformation Pack Backend created by:"
         '
         'Label5
         '
@@ -99,7 +99,7 @@ Partial Class Credits
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(413, 26)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Dominic Hayes: Created the Win8To7 Transformation Pack Backend backend"
+        Me.Label5.Text = "Dominic Hayes: Created the Win8To7 Transformation Pack Backend"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label11
