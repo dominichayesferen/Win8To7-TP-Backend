@@ -264,7 +264,7 @@ Do not turn off your computer.</a>
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SystemSetupInProgress /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
 
-        ErrorScreen.setStrings("restoring", "Restore system files and settings and uninstall", status) 'flavour text, like Form1's
+        ErrorScreen.setStrings("restoring", "Restore pre-transformation files and settings and uninstall", status) 'flavour text, like Form1's
         ErrorScreen.Show()
         Me.Hide()
     End Sub
