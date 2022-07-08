@@ -201,7 +201,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SystemSetupInProgress /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
 
-        ErrorScreen.setStrings("transforming", "Transform Windows 8 into Windows 7", status) 'Set the strings for the Error Screen to have fitting flavour text for what this form does
+        ErrorScreen.setStrings("transforming", "Transforming Windows", status) 'Set the strings for the Error Screen to have fitting flavour text for what this form does
         ErrorScreen.Show()
         Me.Hide()
     End Sub
