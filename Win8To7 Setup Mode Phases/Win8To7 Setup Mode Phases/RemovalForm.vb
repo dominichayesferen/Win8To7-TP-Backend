@@ -61,7 +61,7 @@
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SetupType /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
         Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SystemSetupInProgress /t REG_DWORD /d 0 /f", AppWinStyle.Hide, True)
 
-        ErrorScreen.setStrings("removing", "Remove backed up pre-modified files and settings and uninstall", status) 'flavour text - refer to Form1 for comments
+        ErrorScreen.setStrings("removing", "Remove backed up pre-modification files and settings and uninstall", status) 'flavour text - refer to Form1 for comments
         ErrorScreen.Show()
         Me.Hide()
     End Sub
