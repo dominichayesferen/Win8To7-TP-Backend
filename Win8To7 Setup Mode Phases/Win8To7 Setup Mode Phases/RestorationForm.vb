@@ -345,18 +345,20 @@ Do not turn off your computer.</a>
                     totalTasks += 1
                 Next
                 ' Files with backups, to restore
-                directoriesList = ListDirectory(storagelocation + "\Backups")
-                For Each item In directoriesList
-                    fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
-                    For Each loopfileinfo In fiArr
-                        tempArray = loopfileinfo.FullName.Split("\")
-                        filePath = Join(tempArray.Skip(1).ToArray(), "\") 'Skip C:\ on its own for directory creations
-                        If IO.File.Exists(ModifiedFilesTarget + filePath) And Not IO.File.Exists(storagelocation + "\Backups\" + filePath) Then
-                            Continue For
-                        End If
-                        totalTasks += 1
+                If IO.Directory.Exists(storagelocation + "\Backups") Then 'Safeguard to prevent failure
+                    directoriesList = ListDirectory(storagelocation + "\Backups")
+                    For Each item In directoriesList
+                        fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
+                        For Each loopfileinfo In fiArr
+                            tempArray = loopfileinfo.FullName.Split("\")
+                            filePath = Join(tempArray.Skip(1).ToArray(), "\") 'Skip C:\ on its own for directory creations
+                            If IO.File.Exists(ModifiedFilesTarget + filePath) And Not IO.File.Exists(storagelocation + "\Backups\" + filePath) Then
+                                Continue For
+                            End If
+                            totalTasks += 1
+                        Next
                     Next
-                Next
+                End If
                 totalTasks += 1 'Deleting Swatches
                 ' Registry keys
                 For Each key In regtweaks.SystemTweaks.Item("Delete")
@@ -390,18 +392,20 @@ Do not turn off your computer.</a>
                         End If
                         totalTasks += 1
                     Next
-                    directoriesList = ListDirectory(loopdirinfo.FullName + storagelocationuser + "\Backups")
-                    For Each item In directoriesList
-                        fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
-                        For Each loopfileinfo In fiArr
-                            tempArray = loopfileinfo.FullName.Split("\")
-                            filePath = Join(tempArray.Skip(1).ToArray(), "\") 'Skip C:\ on its own for directory creations
-                            If Not IO.File.Exists(loopdirinfo.FullName + storagelocationuser + "\Backups\" + filePath) Then
-                                Continue For
-                            End If
-                            totalTasks += 1
+                    If IO.Directory.Exists(loopdirinfo.FullName + storagelocationuser + "\Backups") Then 'Safeguard to prevent failure
+                        directoriesList = ListDirectory(loopdirinfo.FullName + storagelocationuser + "\Backups")
+                        For Each item In directoriesList
+                            fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
+                            For Each loopfileinfo In fiArr
+                                tempArray = loopfileinfo.FullName.Split("\")
+                                filePath = Join(tempArray.Skip(1).ToArray(), "\") 'Skip C:\ on its own for directory creations
+                                If Not IO.File.Exists(loopdirinfo.FullName + storagelocationuser + "\Backups\" + filePath) Then
+                                    Continue For
+                                End If
+                                totalTasks += 1
+                            Next
                         Next
-                    Next
+                    End If
                     For Each key In regtweaks.UserTweaks.Item("Delete")
                         totalTasks += 1
                     Next
@@ -463,23 +467,25 @@ Do not turn off your computer.</a>
 
 
             'RESTORE THE REMAINING FILES
-            directoriesList = ListDirectory(storagelocation + "\Backups")
-            For Each item In directoriesList
-                fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
-                For Each loopfileinfo In fiArr
-                    'Move new file to temporary area
-                    If MoveFile(loopfileinfo.FullName.Replace(storagelocation + "\Backups\", windrive), loopfileinfo.FullName.Replace(storagelocation + "\Backups\", ModifiedFilesTarget), _
-                                "remaining files", False) = False Then
-                        Exit Sub
-                    End If
-                    'Move original file to its original location
-                    If MoveFile(loopfileinfo.FullName, loopfileinfo.FullName.Replace(storagelocation + "\Backups\", windrive), "remaining files restoration", False) = False Then
-                        Exit Sub
-                    End If
+            If IO.Directory.Exists(storagelocation + "\Backups") Then 'Safeguard to prevent failure
+                directoriesList = ListDirectory(storagelocation + "\Backups")
+                For Each item In directoriesList
+                    fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
+                    For Each loopfileinfo In fiArr
+                        'Move new file to temporary area
+                        If MoveFile(loopfileinfo.FullName.Replace(storagelocation + "\Backups\", windrive), loopfileinfo.FullName.Replace(storagelocation + "\Backups\", ModifiedFilesTarget), _
+                                    "remaining files", False) = False Then
+                            Exit Sub
+                        End If
+                        'Move original file to its original location
+                        If MoveFile(loopfileinfo.FullName, loopfileinfo.FullName.Replace(storagelocation + "\Backups\", windrive), "remaining files restoration", False) = False Then
+                            Exit Sub
+                        End If
 
-                    doneTasks += 1 'Add 1 to doneTasks
+                        doneTasks += 1 'Add 1 to doneTasks
+                    Next
                 Next
-            Next
+            End If
 
 
             'DELETE FOLDERS INTENTIONALLY CREATED BY THE TRANSFORMATION
@@ -624,22 +630,24 @@ Do not turn off your computer.</a>
 
 
                 'RESTORE THE REMAINING FILES
-                directoriesList = ListDirectory(loopdirinfo.FullName + storagelocationuser + "\Backups")
-                For Each item In directoriesList
-                    fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
-                    For Each loopfileinfo In fiArr
-                        If IO.File.Exists(loopfileinfo.FullName.Replace(loopdirinfo.FullName + storagelocationuser + "\Backups\", loopdirinfo.FullName + "\")) Then
-                            'Delete the new file
-                            IO.File.Delete(loopfileinfo.FullName.Replace(loopdirinfo.FullName + storagelocationuser + "\Backups\", loopdirinfo.FullName + "\"))
-                        End If
-                        'Move original file to its original location
-                        If MoveFile(loopfileinfo.FullName, loopfileinfo.FullName.Replace(loopdirinfo.FullName + storagelocationuser + "\Backups\", loopdirinfo.FullName + "\"), "remaining user files restoration", False) = False Then
-                            Exit Sub
-                        End If
+                If IO.File.Exists(loopdirinfo.FullName + storagelocationuser + "\Backups") Then 'Safeguard to prevent failure
+                    directoriesList = ListDirectory(loopdirinfo.FullName + storagelocationuser + "\Backups")
+                    For Each item In directoriesList
+                        fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
+                        For Each loopfileinfo In fiArr
+                            If IO.File.Exists(loopfileinfo.FullName.Replace(loopdirinfo.FullName + storagelocationuser + "\Backups\", loopdirinfo.FullName + "\")) Then
+                                'Delete the new file
+                                IO.File.Delete(loopfileinfo.FullName.Replace(loopdirinfo.FullName + storagelocationuser + "\Backups\", loopdirinfo.FullName + "\"))
+                            End If
+                            'Move original file to its original location
+                            If MoveFile(loopfileinfo.FullName, loopfileinfo.FullName.Replace(loopdirinfo.FullName + storagelocationuser + "\Backups\", loopdirinfo.FullName + "\"), "remaining user files restoration", False) = False Then
+                                Exit Sub
+                            End If
 
-                        doneTasks += 1 'Add 1 to doneTasks
+                            doneTasks += 1 'Add 1 to doneTasks
+                        Next
                     Next
-                Next
+                End If
 
 
                 'DELETE FOLDERS INTENTIONALLY CREATED BY THE TRANSFORMATION
