@@ -1,4 +1,4 @@
-﻿Public Class RestorationForm
+Public Class RestorationForm
 
 #Region "Variables"
     Private StatusTextCustomise As String = <a>Updating transformation... Stage PHASE of 4 - PROGRESS% complete.
@@ -630,7 +630,7 @@ Do not turn off your computer.</a>
 
 
                 'RESTORE THE REMAINING FILES
-                If IO.File.Exists(loopdirinfo.FullName + storagelocationuser + "\Backups") Then 'Safeguard to prevent failure
+                If IO.Directory.Exists(loopdirinfo.FullName + storagelocationuser + "\Backups") Then 'Safeguard to prevent failure
                     directoriesList = ListDirectory(loopdirinfo.FullName + storagelocationuser + "\Backups")
                     For Each item In directoriesList
                         fiArr = New IO.DirectoryInfo(item).GetFiles() 'Get the files in this directory
