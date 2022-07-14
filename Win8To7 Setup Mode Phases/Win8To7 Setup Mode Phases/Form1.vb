@@ -295,7 +295,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             ChangeProgress(70)
 
             If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7Gadgets") = "true" And Not IO.File.Exists(windrive + "Program Files\Windows Sidebar\sidebar.exe") Then
-            'Install Windows Desktop Gadgets (using an alternative running method because Shell seems to quit it before it has completed sometimes)
+                'Install Windows Desktop Gadgets (using an alternative running method because Shell seems to quit it before it has completed sometimes)
                 startInfo = New System.Diagnostics.ProcessStartInfo
                 startInfo.FileName = storagelocation + "\SetupFiles\GadgetInstaller.exe"
                 startInfo.Arguments = "/VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES /TASKS="
