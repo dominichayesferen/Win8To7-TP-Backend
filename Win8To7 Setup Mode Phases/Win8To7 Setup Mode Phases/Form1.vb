@@ -265,7 +265,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 '(where we're doing this during an Update install), and UXThemePatcher would be a waste of time to 'install' given it's already installed (Update doesn't uninstall them)
                 If Not IO.File.Exists(windrive + "AeroGlass\unins000.exe") Then
                     'Install Glass8
-                    Shell(storagelocation + "\SetupFiles\Glass8.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS= /NORESTART", AppWinStyle.NormalFocus, True, 2400000) 'Run in Quiet/Automatic mode
+                    Shell(storagelocation + "\SetupFiles\Glass8.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES /TASKS=", AppWinStyle.NormalFocus, True, 2400000) 'Run in Quiet/Automatic mode
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{277BA0F1-D0BB-4D73-A2DF-6B60C91E1533}_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                     'SystemComponent means that it won't appear in Programs and Features - this is especially important for programs like UXThemePatcher
                 End If
@@ -289,14 +289,14 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
             If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7TaskManager") = "true" And Not IO.File.Exists(windrive + "Program Files\ClassicTaskmgr\unins000.exe") Then
                 'Install Classic Task Manager
-                Shell(storagelocation + "\SetupFiles\ClassicTM.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
+                Shell(storagelocation + "\SetupFiles\ClassicTM.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Classic Task Manager+msconfig for Win 10 and 8_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
             ChangeProgress(70)
 
             If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7Gadgets") = "true" And Not IO.File.Exists(windrive + "Program Files\Windows Sidebar\sidebar.exe") Then
                 'Install Windows Desktop Gadgets
-                Shell(storagelocation + "\SetupFiles\GadgetInstaller.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
+                Shell(storagelocation + "\SetupFiles\GadgetInstaller.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Windows Desktop Gadgets_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
             ChangeProgress(80)
