@@ -901,7 +901,7 @@ Do not turn off your computer.</a>
                 If IO.File.Exists(windrive + "AeroGlass\unins000.exe") Then
                     'Uninstall Glass8
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{277BA0F1-D0BB-4D73-A2DF-6B60C91E1533}_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                    Shell(windrive + "AeroGlass\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART", AppWinStyle.NormalFocus, True, 2400000)
+                    Shell(windrive + "AeroGlass\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES", AppWinStyle.NormalFocus, True, 2400000)
                 End If
             End If
             If IO.Directory.Exists(windir + "\" + sysprefix + "\OldNewExplorer") Then
@@ -931,12 +931,12 @@ Do not turn off your computer.</a>
             If IO.File.Exists(windrive + "Program Files\ClassicTaskmgr\unins000.exe") Then
                 'Uninstall Classic Task Manager
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Classic Task Manager+msconfig for Win 10 and 8_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                Shell(windrive + "Program Files\ClassicTaskmgr\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART", AppWinStyle.NormalFocus, True, 2400000)
+                Shell(windrive + "Program Files\ClassicTaskmgr\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES", AppWinStyle.NormalFocus, True, 2400000)
             End If
             If IO.File.Exists(windir + "\Installer\Desktop Gadgets\unins000.exe") Then
                 'Uninstall Windows Desktop Gadgets
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Windows Desktop Gadgets_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                Shell(windir + "\Installer\Desktop Gadgets\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART", AppWinStyle.NormalFocus, True, 2400000)
+                Shell(windir + "\Installer\Desktop Gadgets\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES", AppWinStyle.NormalFocus, True, 2400000)
             End If
             'Uninstall Windows Media Center
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{99CCD11D-435B-4662-A48C-3AC046EC7014}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
