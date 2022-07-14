@@ -934,9 +934,18 @@ Do not turn off your computer.</a>
                 Shell(windrive + "Program Files\ClassicTaskmgr\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES", AppWinStyle.NormalFocus, True, 2400000)
             End If
             If IO.File.Exists(windir + "\Installer\Desktop Gadgets\unins000.exe") Then
-                'Uninstall Windows Desktop Gadgets
+                'Uninstall Windows Desktop Gadgets (using an alternative running method because Shell seems to quit it before it has completed sometimes)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Windows Desktop Gadgets_is1"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                Shell(windir + "\Installer\Desktop Gadgets\unins000.exe /VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES", AppWinStyle.NormalFocus, True, 2400000)
+
+                startInfo = New System.Diagnostics.ProcessStartInfo
+                startInfo.FileName = windir + "\Installer\Desktop Gadgets\unins000.exe"
+                startInfo.Arguments = "/VERYSILENT /CLOSEAPPLICATIONS /NORESTART /SUPPRESSMSGBOXES"
+                startInfo.CreateNoWindow = True
+                startInfo.UseShellExecute = True
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden
+
+                MyProcess = Process.Start(startInfo)
+                MyProcess.WaitForExit()
             End If
             'Uninstall Windows Media Center
             Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{99CCD11D-435B-4662-A48C-3AC046EC7014}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
