@@ -294,7 +294,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             End If
             ChangeProgress(70)
 
-            If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7Gadgets") = "true" And Not IO.File.Exists(windir + "\Installer\Desktop Gadgets\unins000.exe") Then
+            If HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Allow7Gadgets") = "true" And Not IO.File.Exists(windrive + "Program Files\Windows Sidebar\sidebar.exe") Then
                 'Install Windows Desktop Gadgets
                 Shell(storagelocation + "\SetupFiles\GadgetInstaller.exe /VERYSILENT /CLOSEAPPLICATIONS /TASKS=", AppWinStyle.NormalFocus, True, 2400000)
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Windows Desktop Gadgets_is1"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
