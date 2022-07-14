@@ -22,6 +22,9 @@
 
     Public regtweaks As New RegistryTweaks
     Public cfgs As New Configs
+
+    Public startInfo As New System.Diagnostics.ProcessStartInfo
+    Public MyProcess As Process
 #End Region
 
 #Region "Init and End"
