@@ -25,6 +25,10 @@
 
     Public startInfo As New System.Diagnostics.ProcessStartInfo
     Public MyProcess As Process
+
+    Public isStarter As Boolean = Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "Professional").ToString.StartsWith("Starter")
+    Public isHome As Boolean = Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "Professional").ToString.StartsWith("Core")
+    Public isEnterprise As Boolean = Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "Professional").ToString.StartsWith("Enterprise")
 #End Region
 
 #Region "Init and End"
@@ -380,6 +384,35 @@
             tempArray = tempArray.Skip(1).ToArray()
             targetPath = String.Join("_", tempArray.ToArray)
 
+
+            If targetPath.StartsWith("NotStarter_") And isStarter = True Then 'Skip files not for Starter if Starter is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("NotPro_") And isStarter = False And isHome = False And isEnterprise = False Then 'Skip files not for Pro if Pro is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("NotEnterprise_") And isEnterprise = True Then 'Skip files not for Enterprise if Enterprise is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Starter_") And isStarter = False Then 'Skip files only for Starter if Starter is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Core_") And isHome = False Then 'Skip files only for Core/Home if it's is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Pro_") And (isStarter = True Or isHome = True Or isEnterprise = True) Then 'Skip files only for Pro if Pro is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Enterprise_") And isEnterprise = False Then 'Skip files only for Enterprise if Enterprise is not in use
+                Continue For
+            End If
+
+            ' Strip SKU identifier from id for next steps
+            tempArray = targetPath.Split("_")
+            tempArray = tempArray.Skip(1).ToArray()
+            targetPath = String.Join("_", tempArray.ToArray)
+
+
             ' Now skip depending on Ribbon styling
             If targetPath.StartsWith("DPRibbon_") And Not HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Ribbon") = "win8" Then '  Skip DP Ribbon if not chosen
                 Continue For
@@ -435,10 +468,19 @@
                 Continue For
             End If
 
-            ' Strip type identifier from id for next steps
+            ' Strip setting identifier from id for next steps
             tempArray = targetPath.Split("_")
             tempArray = tempArray.Skip(1).ToArray()
             targetPath = String.Join("_", tempArray.ToArray)
+
+
+            'This is where you'd skip depending on Aesthetics not being selected, but no other aesthetic options are pre-coded in this, so... this part is empty.
+
+            ' Strip aesthetic identifier from id for next steps
+            tempArray = targetPath.Split("_")
+            tempArray = tempArray.Skip(1).ToArray()
+            targetPath = String.Join("_", tempArray.ToArray)
+
 
             'First, deal with Setup files
             If targetPath.StartsWith("setupfile:") Then

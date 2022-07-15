@@ -475,6 +475,34 @@
             targetPath = String.Join("_", tempArray.ToArray)
 
 
+            If targetPath.StartsWith("NotStarter_") And isStarter = True Then 'Skip files not for Starter if Starter is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("NotPro_") And isStarter = False And isHome = False And isEnterprise = False Then 'Skip files not for Pro if Pro is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("NotEnterprise_") And isEnterprise = True Then 'Skip files not for Enterprise if Enterprise is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Starter_") And isStarter = False Then 'Skip files only for Starter if Starter is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Core_") And isHome = False Then 'Skip files only for Core/Home if it's is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Pro_") And (isStarter = True Or isHome = True Or isEnterprise = True) Then 'Skip files only for Pro if Pro is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Enterprise_") And isEnterprise = False Then 'Skip files only for Enterprise if Enterprise is not in use
+                Continue For
+            End If
+
+            ' Strip SKU identifier from id for next steps
+            tempArray = targetPath.Split("_")
+            tempArray = tempArray.Skip(1).ToArray()
+            targetPath = String.Join("_", tempArray.ToArray)
+
+
             ' Now skip depending on Branding styling
             If targetPath.StartsWith("Branding7Pro_") And (Branding7Pro.Checked = False Or isStarter = True Or isHome = True Or isEnterprise = True) Then 'Skip 7 Professional Branding if not chosen or isn't Pro
                 Continue For
@@ -557,21 +585,20 @@
             If targetPath.StartsWith("NotReduceWinX_") And ReduceWinX.Checked = True Then 'Skip not alt. Win+X if chosen
                 Continue For
             End If
-            'Skip depending on SKU
-            If targetPath.StartsWith("Starter_") And isStarter = False Then 'Skip Starter-only resources if not on Starter
-                Continue For
-            End If
-            If targetPath.StartsWith("NotStarter_") And isStarter = True Then 'Skip non-Starter resources if on Starter
-                Continue For
-            End If
-            If targetPath.StartsWith("NotPro_") And isStarter = False And isHome = False Then 'Skip non-Pro resources if on Pro
-                Continue For
-            End If
 
-            ' Strip type identifier from id for next steps
+            ' Strip setting identifier from id for next steps
             tempArray = targetPath.Split("_")
             tempArray = tempArray.Skip(1).ToArray()
             targetPath = String.Join("_", tempArray.ToArray)
+
+
+            'This is where you'd skip depending on Aesthetics not being selected, but no other aesthetic options are pre-coded in this, so... this part is empty.
+
+            ' Strip aesthetic identifier from id for next steps
+            tempArray = targetPath.Split("_")
+            tempArray = tempArray.Skip(1).ToArray()
+            targetPath = String.Join("_", tempArray.ToArray)
+
 
             'First, deal with Setup files
             If targetPath.StartsWith("setupfile:") Then
@@ -632,6 +659,34 @@
             targetPath = String.Join("_", tempArray.ToArray)
 
 
+            If targetPath.StartsWith("NotStarter_") And isStarter = True Then 'Skip files not for Starter if Starter is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("NotPro_") And isStarter = False And isHome = False And isEnterprise = False Then 'Skip files not for Pro if Pro is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("NotEnterprise_") And isEnterprise = True Then 'Skip files not for Enterprise if Enterprise is in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Starter_") And isStarter = False Then 'Skip files only for Starter if Starter is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Core_") And isHome = False Then 'Skip files only for Core/Home if it's is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Pro_") And (isStarter = True Or isHome = True Or isEnterprise = True) Then 'Skip files only for Pro if Pro is not in use
+                Continue For
+            End If
+            If targetPath.StartsWith("Enterprise_") And isEnterprise = False Then 'Skip files only for Enterprise if Enterprise is not in use
+                Continue For
+            End If
+
+            ' Strip SKU identifier from id for next steps
+            tempArray = targetPath.Split("_")
+            tempArray = tempArray.Skip(1).ToArray()
+            targetPath = String.Join("_", tempArray.ToArray)
+
+
             ' Now skip depending on Branding styling
             If targetPath.StartsWith("Branding7Pro_") And (Branding7Pro.Checked = False Or isStarter = True Or isHome = True Or isEnterprise = True) Then 'Skip 7 Professional Branding if not chosen or isn't Pro
                 Continue For
@@ -714,21 +769,20 @@
             If targetPath.StartsWith("NotReduceWinX_") And ReduceWinX.Checked = True Then 'Skip not alt. Win+X if chosen
                 Continue For
             End If
-            'Skip depending on SKU
-            If targetPath.StartsWith("Starter_") And isStarter = False Then 'Skip Starter-only resources if not on Starter
-                Continue For
-            End If
-            If targetPath.StartsWith("NotStarter_") And isStarter = True Then 'Skip non-Starter resources if on Starter
-                Continue For
-            End If
-            If targetPath.StartsWith("NotPro_") And isStarter = False And isHome = False Then 'Skip non-Pro resources if on Pro
-                Continue For
-            End If
 
-            ' Strip type identifier from id for next steps
+            ' Strip setting identifier from id for next steps
             tempArray = targetPath.Split("_")
             tempArray = tempArray.Skip(1).ToArray()
             targetPath = String.Join("_", tempArray.ToArray)
+
+
+            'This is where you'd skip depending on Aesthetics not being selected, but no other aesthetic options are pre-coded in this, so... this part is empty.
+
+            ' Strip aesthetic identifier from id for next steps
+            tempArray = targetPath.Split("_")
+            tempArray = tempArray.Skip(1).ToArray()
+            targetPath = String.Join("_", tempArray.ToArray)
+
 
             'Skip extracted Setup files and tools
             If targetPath.StartsWith("setupfile:") Or targetPath.StartsWith("setuptool:") Then
