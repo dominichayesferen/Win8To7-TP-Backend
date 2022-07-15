@@ -121,44 +121,44 @@
   <data name="int_SetupBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_SetupBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_AllowUserCPL_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_AllowUserCPL_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_AllowUserCPL_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_AllowUserCPL_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win7probranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win7probranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="amd64_9200_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_9200_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_9200_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_9200_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_Branding7Ult_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding7Ult_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding7Ult_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding7Ult_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win8probranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win8probranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding7Home_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding7Home_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding7Home_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding7Home_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="amd64_all_DPRibbon_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_all_DPRibbon_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_all_all_DPRibbon_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_all_all_DPRibbon_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="amd64_9600_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_9600_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_9600_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_9600_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_startisback" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_startisback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_NotStarter_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_NotStarter_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_NotStarter_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_NotStarter_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_all_userlocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_userlocation.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_userlocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_userlocation.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="amd64_all_7Ribbon_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_all_7Ribbon_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_all_all_7Ribbon_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_all_all_7Ribbon_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win7ultimatebranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win7ultimatebranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +166,8 @@
   <data name="int_Chocolate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_Chocolate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding8Home_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding8Home_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding8Home_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding8Home_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_Automatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_Automatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +175,8 @@
   <data name="int_ButtonHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_ButtonHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding7Enterprise_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding7Enterprise_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding7Enterprise_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding7Enterprise_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win7starterbranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_win7starterbranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,26 +184,26 @@
   <data name="int_ForwardNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_ForwardNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_ShineTheme_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_ShineTheme_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_ShineTheme_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_ShineTheme_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_BackPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_BackPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="amd64_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_all_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_all_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win7enterprisebranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win7enterprisebranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_ShinelessTheme_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_ShinelessTheme_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_ShinelessTheme_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_ShinelessTheme_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win8ribbon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win8ribbon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding8Enterprise_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding8Enterprise_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding8Enterprise_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding8Enterprise_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_ForwardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_ForwardHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,35 +214,35 @@
   <data name="int_amogus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_amogus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_SMStartIsBack_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_SMStartIsBack_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_SMStartIsBack_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_SMStartIsBack_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_ReduceWinX_userlocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_ReduceWinX_userlocation.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_ReduceWinX_all_userlocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_ReduceWinX_all_userlocation.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_SetupLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_SetupLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="i386_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\i386_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="i386_all_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\i386_all_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win8homebranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_win8homebranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding7Starter_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding7Starter_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding7Starter_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding7Starter_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_Allow7Gadgets_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Allow7Gadgets_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Allow7Gadgets_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Allow7Gadgets_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_all_setuptool:7z License.txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_setuptool_7z_license.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_setuptool:7z License.txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_setuptool_7z_license.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_BackDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_BackDisabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_SMOpenShell_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_SMOpenShell_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_SMOpenShell_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_SMOpenShell_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_themeshine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_themeshine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,23 +250,23 @@
   <data name="int_win7homebranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_win7homebranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding8Pro_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding8Pro_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding8Pro_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding8Pro_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="i386_all_7Ribbon_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\i386_all_7Ribbon_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="i386_all_all_7Ribbon_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\i386_all_all_7Ribbon_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_BackNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_BackNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_9200_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_9200_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_9200_all_all_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_9200_all_all_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_NotPro_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_NotPro_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_NotPro_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_NotPro_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="amd64_9600_AllowMediaCenter_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_9600_AllowMediaCenter_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_9600_all_AllowMediaCenter_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_9600_all_AllowMediaCenter_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win8starterbranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_win8starterbranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,61 +280,61 @@
   <data name="int_ButtonPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_ButtonPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding7Pro_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding7Pro_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding7Pro_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding7Pro_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_themenoshine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_themenoshine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_9600_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_9600_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_9600_all_all_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_9600_all_all_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win7ribbon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win7ribbon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Starter_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Starter_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_Starter_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_Starter_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_9600_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_9600_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_9600_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_9600_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_win8enterprisebranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\win8enterprisebranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_Branding8Starter_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_Branding8Starter_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_Branding8Starter_all_res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_Branding8Starter_all_res.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_ex7forw8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_ex7forw8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_all_setuptool:setup.exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_setuptool_setup.exe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_setuptool:setup.exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_setuptool_setup.exe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_9200_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_9200_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_9200_all_all_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_9200_all_all_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="i386_all_DPRibbon_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\i386_all_DPRibbon_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="i386_all_all_DPRibbon_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\i386_all_all_DPRibbon_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_wut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_wut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="amd64_9600_AllowShell32_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amd64_9600_AllowShell32_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="amd64_9600_all_AllowShell32_all_location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amd64_9600_all_AllowShell32_all_location.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Capture.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all_all_all_setuptool:7za.dll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_setuptool_7za.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_setuptool:7za.dll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_setuptool_7za.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_all_setuptool:7za.exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_setuptool_7za.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_setuptool:7za.exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_setuptool_7za.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="all_all_all_setuptool:7zxa.dll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_setuptool_7zxa.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="all_all_all_all_all_setuptool:7zxa.dll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_all_all_all_all_setuptool_7zxa.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
