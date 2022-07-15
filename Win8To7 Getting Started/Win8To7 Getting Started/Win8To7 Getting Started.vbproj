@@ -179,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Main.ico" />
+    <None Include="Resources\gsicon.png" />
     <None Include="Resources\dvdmakersmol.png" />
     <None Include="Resources\dvdmakerbeeg.png" />
     <None Include="Resources\selectionunfocusedlite.png" />

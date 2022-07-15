@@ -167,7 +167,7 @@ Partial Class Form1
         'BkupGettingStarted1
         '
         Me.BkupGettingStarted1.BackColor = System.Drawing.Color.Transparent
-        Me.BkupGettingStarted1.Image = Global.Win8To7_Getting_Started.My.Resources.Resources.mainbeeg
+        Me.BkupGettingStarted1.Image = Global.Win8To7_Getting_Started.My.Resources.Resources.gsicon
         Me.BkupGettingStarted1.Location = New System.Drawing.Point(1, 3)
         Me.BkupGettingStarted1.Name = "BkupGettingStarted1"
         Me.BkupGettingStarted1.Size = New System.Drawing.Size(16, 16)

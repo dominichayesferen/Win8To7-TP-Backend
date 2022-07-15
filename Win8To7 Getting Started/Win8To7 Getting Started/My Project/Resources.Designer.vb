@@ -293,6 +293,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property gsicon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gsicon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property headerclassic() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("headerclassic", resourceCulture)
@@ -346,16 +356,6 @@ Namespace My.Resources
         Friend ReadOnly Property livesmol() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("livesmol", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Main_016x016_32() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Main_016x016_32", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
