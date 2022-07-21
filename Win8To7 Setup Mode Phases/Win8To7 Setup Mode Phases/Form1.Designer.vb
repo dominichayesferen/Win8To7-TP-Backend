@@ -46,9 +46,10 @@ Partial Class Form1
         '
         'FakeIntro
         '
+        Me.FakeIntro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FakeIntro.Location = New System.Drawing.Point(0, 0)
         Me.FakeIntro.Name = "FakeIntro"
-        Me.FakeIntro.Size = New System.Drawing.Size(155, 152)
+        Me.FakeIntro.Size = New System.Drawing.Size(740, 520)
         Me.FakeIntro.TabIndex = 3
         '
         'PictureBox2
