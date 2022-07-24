@@ -242,13 +242,7 @@ As of 10 January 2017, Windows Live Essentials is no longer officially available
 • Change your account picture</a>
     Private Text9 As String = <a>• Make text and other items on your screen larger or smaller
 • Adjust your screen resolution</a>
-    Private Text10 As String = <a>• Optimise for blindness
-• Optimise visual display
-• Set up alternative input devices
-• Adjust settings for the mouse or other pointing devices
-• Adjust settings for the keyboard
-• Set up alternatives for sounds
-• Adjust settings for touch and tablets</a>
+    Private Text10 As String = <a>Make your computer easier to see, hear, and use. Adjust the visual display, use an input device, get recommendations for settings, and more.</a>
     Private Text11 As String = <a>• Revert your Windows installation to how it was before you installed this transformation pack
 • Delete the transformation pack backups and installation data from your system if you don't want to go back
 • View the credits for this transformation pack, and support the people who made programs involved in this transformation</a>
