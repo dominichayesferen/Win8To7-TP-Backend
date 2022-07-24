@@ -685,7 +685,7 @@ Do not turn off your computer.</a>
 
 
                 'Load the NTUSER.DAT file to HKLM\UserConfig, and UsrClass.dat file to HKLM\UserConfigClasses too
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfig"" " + loopdirinfo.FullName + "\NTUSER.DAT", AppWinStyle.Hide, True)
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfig"" """ + loopdirinfo.FullName + "\NTUSER.DAT""", AppWinStyle.Hide, True)
                 If IO.File.Exists(loopdirinfo.FullName + "\AppData\Local\Microsoft\Windows\UsrClass.dat") Then
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfigClasses"" " + loopdirinfo.FullName + "\AppData\Local\Microsoft\Windows\UsrClass.dat", AppWinStyle.Hide, True)
                 End If
@@ -1101,7 +1101,7 @@ Do not turn off your computer.</a>
                 End If
 
                 'Load the NTUSER.DAT file to HKLM\UserConfig
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfig"" " + loopdirinfo.FullName + "\NTUSER.DAT", AppWinStyle.Hide, True)
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfig"" """ + loopdirinfo.FullName + "\NTUSER.DAT""", AppWinStyle.Hide, True)
 
                 'Delete the user's backups
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\UserConfig\Software\Win8To7"" /f", AppWinStyle.Hide, True)

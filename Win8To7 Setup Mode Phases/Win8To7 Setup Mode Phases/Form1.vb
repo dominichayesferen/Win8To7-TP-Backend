@@ -838,7 +838,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
                 ' REGISTRY CHANGES
                 '  Load the NTUSER.DAT file to HKLM\UserConfig
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfig"" " + loopdirinfo.FullName + "\NTUSER.DAT", AppWinStyle.Hide, True)
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg load ""HKLM\UserConfig"" """ + loopdirinfo.FullName + "\NTUSER.DAT""", AppWinStyle.Hide, True)
 
                 '  Then tackle remaining deletions
                 For Each key In regtweaks.UserTweaks.Item("Delete")
