@@ -450,11 +450,11 @@ Do not turn off your computer.</a>
 
                 'Move new file to temporary area
                 If IO.File.Exists(item) Then
-                    If MoveFile(item, item.Replace(windrive, storagelocation + "\FileReplacements\"), "files with no backups", False) = False Then
+                    If MoveFile(item, item.Replace(windrive, ModifiedFilesTarget), "files with no backups", False) = False Then
                         Exit Sub
                     End If
                 ElseIf IO.Directory.Exists(item) Then
-                    If MoveFolder(item, item.Replace(windrive, storagelocation + "\FileReplacements\"), "folders with no backups", False) = False Then
+                    If MoveFolder(item, item.Replace(windrive, ModifiedFilesTarget), "folders with no backups", False) = False Then
                         Exit Sub
                     End If
                 End If
