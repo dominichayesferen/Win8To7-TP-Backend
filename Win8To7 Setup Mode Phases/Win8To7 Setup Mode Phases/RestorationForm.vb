@@ -973,7 +973,7 @@ Do not turn off your computer.</a>
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v CmdLine /d " + windir + "\Temp\win8to7restore.exe" + " /t REG_SZ /f", AppWinStyle.Hide, True)
             Else
                 'Do some extra cleanup with Phase 4
-                Phase4(True)
+                Phase4()
 
                 'Go to Stage 103 (Customisation Stage 3)
                 HKLMKey32.OpenSubKey("SOFTWARE\Win8To7", True).SetValue("CurrentPhase", 103)
@@ -997,7 +997,7 @@ Do not turn off your computer.</a>
     End Sub
 #End Region
 #Region "Stage 4 of 4"
-    Sub Phase4(Optional ByVal forCustomise = False) 'When done in Customising-mode, this is only partial for partial-uninstalls
+    Sub Phase4() 'When done in Customising-mode, this is only partial for partial-uninstalls
         Try
             Dim SMSetting As String = HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("Start")
             Dim UXThemePatcherAllowed As String = HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("AllowUXThemePatcher")
