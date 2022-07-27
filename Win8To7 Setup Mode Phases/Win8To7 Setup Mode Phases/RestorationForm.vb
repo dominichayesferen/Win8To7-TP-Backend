@@ -91,7 +91,8 @@ Do not turn off your computer.</a>
         ElseIf HKLMKey32.OpenSubKey("SOFTWARE\Win8To7").GetValue("CurrentPhase") = 102 Then 'Stage 102 = Restoration Stage 3, but abridged
             animthread.Abort() 'Stop the restoration animation, because it'll waste resources
             CustomisingMode.Visible = True 'Switch GUIs to Customising
-            Dim jobthread As New Thread(AddressOf restorationPhase3)
+            forCustomise = True
+            Dim jobthread As New Thread(AddressOf Phase3)
             jobthread.Start()
         Else
             End
@@ -289,11 +290,7 @@ Do not turn off your computer.</a>
     End Sub
 #End Region
 #Region "Stage 3 of 4"
-    Public Sub restorationPhase3()
-        Phase3(True) 'Launch Phase 3 in Updating mode
-    End Sub
-
-    Private Sub Phase3(Optional ByVal forCustomise = False)
+    Private Sub Phase3()
         Try
             Dim directoriesList As List(Of String)
             Dim filePath As String
