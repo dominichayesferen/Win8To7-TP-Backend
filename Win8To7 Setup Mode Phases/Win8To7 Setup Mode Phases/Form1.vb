@@ -650,9 +650,11 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                         Continue For 'Skip non-existent target files
                     End If
 
-                    'Copy original file to backups area
-                    If MoveFile(reslessname, reslessname.Replace(windrive, storagelocation + "\Backups\"), "file patches backups", True) = False Then
-                        Exit Sub
+                    'Copy original file to backups area if it hasn't yet been backed up
+                    If Not IO.File.Exists(reslessname.Replace(windrive, storagelocation + "\Backups\")) Then
+                        If MoveFile(reslessname, reslessname.Replace(windrive, storagelocation + "\Backups\"), "file patches backups", True) = False Then
+                            Exit Sub
+                        End If
                     End If
                     reslessname = ToNative(reslessname) 'WOW32 countermeasure - System32 (x64) = SysNative in WOW32 - for ResHacker
 
