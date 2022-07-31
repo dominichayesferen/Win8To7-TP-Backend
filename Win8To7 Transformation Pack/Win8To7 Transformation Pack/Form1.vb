@@ -874,7 +874,7 @@
                             End If
                         Next
                         'Now move the folder, and rename it, to intended parent directory
-                        IO.Directory.Move(directory + "\STARTISBACK", directory + "\Program Files (x86)\StartIsBack")
+                        My.Computer.FileSystem.CopyDirectory(directory + "\STARTISBACK", directory + "\Program Files (x86)\StartIsBack", True)
                     End If
                 Next
             Else
@@ -885,7 +885,7 @@
                                 IO.Directory.CreateDirectory(item)
                             End If
                         Next
-                        IO.Directory.Move(directory + "\STARTISBACK", directory + "\Program Files\StartIsBack")
+                        My.Computer.FileSystem.CopyDirectory(directory + "\STARTISBACK", directory + "\Program Files\StartIsBack", True)
                     End If
                 Next
             End If
@@ -902,7 +902,7 @@
                             IO.Directory.CreateDirectory(item)
                         End If
                     Next
-                    IO.Directory.Move(directory + "\OPENSHELL", directory + "\Program Files\Open-Shell")
+                    My.Computer.FileSystem.CopyDirectory(directory + "\OPENSHELL", directory + "\Program Files\Open-Shell", True)
                 End If
             Next
         Catch ex As Exception
@@ -920,7 +920,7 @@
                                 IO.Directory.CreateDirectory(item)
                             End If
                         Next
-                        IO.Directory.Move(directory + "\MEDIACENTER", directory + "\Program Files\Windows Media Center\ehome")
+                        My.Computer.FileSystem.CopyDirectory(directory + "\MEDIACENTER", directory + "\Program Files\Windows Media Center\ehome", True)
                     End If
                 Next
             Else
@@ -933,7 +933,7 @@
                             End If
                         Next
                         'Now move the folder, and rename it, to intended parent directory
-                        IO.Directory.Move(directory + "\MEDIACENTER", directory + "\Windows\ehome")
+                        My.Computer.FileSystem.CopyDirectory(directory + "\MEDIACENTER", directory + "\Windows\ehome", True)
                     End If
                 Next
             End If
@@ -950,7 +950,7 @@
                             IO.Directory.CreateDirectory(item)
                         End If
                     Next
-                    IO.Directory.Move(directory + "\SIDEBAR", directory + "\Program Files\Windows Sidebar")
+                    My.Computer.FileSystem.CopyDirectory(directory + "\SIDEBAR", directory + "\Program Files\Windows Sidebar", True)
                 End If
             Next
         Catch ex As Exception
