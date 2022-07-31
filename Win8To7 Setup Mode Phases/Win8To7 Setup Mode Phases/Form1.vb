@@ -900,7 +900,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                             Try
                                 IO.File.Delete(loopfileinfo.FullName)
                             Catch
-                                Shell(windir + "\" + sysprefix + "\cmd.exe /c del " + loopfileinfo.FullName + " /s /q /f /a", AppWinStyle.Hide, True)
+                                Shell(windir + "\" + sysprefix + "\cmd.exe /c del """ + loopfileinfo.FullName + """ /s /q /f /a", AppWinStyle.Hide, True)
                             End Try
                         End If
                     Next
