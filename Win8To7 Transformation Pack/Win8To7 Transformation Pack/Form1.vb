@@ -875,6 +875,10 @@
                         Next
                         'Now move the folder, and rename it, to intended parent directory
                         My.Computer.FileSystem.CopyDirectory(directory + "\STARTISBACK", directory + "\Program Files (x86)\StartIsBack", True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\STARTISBACK" + """ /s /q /f /a", AppWinStyle.Hide, True) 'Delete the old directory now it is copied
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\STARTISBACK" + """ /s /q", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\STARTISBACK" + """ /s /q /f /a", AppWinStyle.Hide, True) 'Just to be sure, since deleting is tempremental
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\STARTISBACK" + """ /s /q", AppWinStyle.Hide, True)
                     End If
                 Next
             Else
@@ -886,6 +890,10 @@
                             End If
                         Next
                         My.Computer.FileSystem.CopyDirectory(directory + "\STARTISBACK", directory + "\Program Files\StartIsBack", True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\STARTISBACK" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\STARTISBACK" + """ /s /q", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\STARTISBACK" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\STARTISBACK" + """ /s /q", AppWinStyle.Hide, True)
                     End If
                 Next
             End If
@@ -903,6 +911,10 @@
                         End If
                     Next
                     My.Computer.FileSystem.CopyDirectory(directory + "\OPENSHELL", directory + "\Program Files\Open-Shell", True)
+                    Shell(sysprefix + "\cmd.exe /c del """ + directory + "\OPENSHELL" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                    Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\OPENSHELL" + """ /s /q", AppWinStyle.Hide, True)
+                    Shell(sysprefix + "\cmd.exe /c del """ + directory + "\OPENSHELL" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                    Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\OPENSHELL" + """ /s /q", AppWinStyle.Hide, True)
                 End If
             Next
         Catch ex As Exception
@@ -921,6 +933,10 @@
                             End If
                         Next
                         My.Computer.FileSystem.CopyDirectory(directory + "\MEDIACENTER", directory + "\Program Files\Windows Media Center\ehome", True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\MEDIACENTER" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\MEDIACENTER" + """ /s /q", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\MEDIACENTER" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\MEDIACENTER" + """ /s /q", AppWinStyle.Hide, True)
                     End If
                 Next
             Else
@@ -934,6 +950,10 @@
                         Next
                         'Now move the folder, and rename it, to intended parent directory
                         My.Computer.FileSystem.CopyDirectory(directory + "\MEDIACENTER", directory + "\Windows\ehome", True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\MEDIACENTER" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\MEDIACENTER" + """ /s /q", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c del """ + directory + "\MEDIACENTER" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                        Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\MEDIACENTER" + """ /s /q", AppWinStyle.Hide, True)
                     End If
                 Next
             End If
@@ -951,6 +971,10 @@
                         End If
                     Next
                     My.Computer.FileSystem.CopyDirectory(directory + "\SIDEBAR", directory + "\Program Files\Windows Sidebar", True)
+                    Shell(sysprefix + "\cmd.exe /c del """ + directory + "\SIDEBAR" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                    Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\SIDEBAR" + """ /s /q", AppWinStyle.Hide, True)
+                    Shell(sysprefix + "\cmd.exe /c del """ + directory + "\SIDEBAR" + """ /s /q /f /a", AppWinStyle.Hide, True)
+                    Shell(sysprefix + "\cmd.exe /c rd """ + directory + "\SIDEBAR" + """ /s /q", AppWinStyle.Hide, True)
                 End If
             Next
         Catch ex As Exception
