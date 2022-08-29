@@ -10,6 +10,7 @@
     Public isEnterprise As Boolean = Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "Professional").ToString.StartsWith("Enterprise")
 
     Public isInstalled As Boolean = False 'has already been installed?
+    Public firefoxInstalled As Boolean = IO.File.Exists(windrive + "Program Files\Mozilla Firefox\firefox.exe") Or IO.File.Exists(windrive + "Program Files\LibreWolf\librewolf.exe") Or IO.File.Exists(windrive + "Program Files\Waterfox\waterfox.exe")
 #End Region
 #Region "HC compatibility"
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
@@ -242,6 +243,10 @@
 #End Region
 #Region "Confirmation page"
     Private Sub NextConfirm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NextConfirm.Click
+        If firefoxInstalled = True Then 'Warn about the limitations
+            MsgBox("We have detected an installation of Firefox or a Firefox-based browser on your computer. Unfortunately, Mozilla decided to break Firefox in Windows 7, and subsequently in this transformation pack, when introducing the 'Proton' redesign." + Environment.NewLine + Environment.NewLine + "Transformation will continue, but will lack key changes like the Windows 7 titlebar button widths to prevent issues from occurring." + Environment.NewLine + "Press OK to begin the transformation.", MsgBoxStyle.Exclamation + MsgBoxStyle.ApplicationModal, "Win8To7 Transformation Pack Backend")
+        End If
+
         BackArea.Visible = False
         PageTransform.Visible = True
         PageConfirm.Visible = False
@@ -585,6 +590,10 @@
             If targetPath.StartsWith("NotReduceWinX_") And ReduceWinX.Checked = True Then 'Skip not alt. Win+X if chosen
                 Continue For
             End If
+            ' Now skip depending on...
+            If targetPath.StartsWith("Foxless_") And firefoxInstalled = True Then 'Skip 'foxless' if Firefox or Firefox-based browsers were detected
+                Continue For
+            End If
 
             ' Strip setting identifier from id for next steps
             tempArray = targetPath.Split("_")
@@ -767,6 +776,10 @@
                 Continue For
             End If
             If targetPath.StartsWith("NotReduceWinX_") And ReduceWinX.Checked = True Then 'Skip not alt. Win+X if chosen
+                Continue For
+            End If
+            ' Now skip depending on...
+            If targetPath.StartsWith("Foxless_") And firefoxInstalled = True Then 'Skip 'foxless' if Firefox or Firefox-based browsers were detected
                 Continue For
             End If
 

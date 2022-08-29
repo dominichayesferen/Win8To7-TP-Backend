@@ -173,14 +173,14 @@ high contrast.</a>
 
                 If sResult.Updates.Count > 0 Then
                     SetThemeAppProperties(0) 'now laugh
-                    If MsgBox("Windows Updates are available for your system. You should apply them before transforming, as updating your system with certain years-old-updates while transformed can brick your install of Windows, and lacking certain updates before February 2021 can make the transformation brick Windows entirely. KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.SystemModal, "Win8To7 Transformation Pack Backend") = MsgBoxResult.Yes Then
+                    If MsgBox("Windows Updates are available for your system. You should apply them before transforming, as updating your system with certain years-old-updates while transformed can brick your install of Windows, and lacking certain updates before February 2021 can make the transformation brick Windows entirely." + Environment.NewLine + Environment.NewLine + "KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.SystemModal, "Win8To7 Transformation Pack Backend") = MsgBoxResult.Yes Then
                         SetThemeAppProperties(3)
                     Else
                         End
                     End If
                 End If
             Catch ex As Exception
-                If MsgBox("We couldn't check your Windows installation for available updates. Please be warned that updating your system with certain years-old-updates while transformed can brick your install of Windows, and lacking certain updates before February 2021 can make the transformation brick Windows entirely. KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.SystemModal, "Win8To7 Transformation Pack Backend") = MsgBoxResult.Yes Then
+                If MsgBox("We couldn't check your Windows installation for available updates." + Environment.NewLine + "Please be warned that updating your system with certain years-old-updates while transformed can brick your install of Windows, and lacking certain updates before February 2021 can make the transformation brick Windows entirely." + Environment.NewLine + Environment.NewLine + "KNOWING THIS, would you like to continue?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.SystemModal, "Win8To7 Transformation Pack Backend") = MsgBoxResult.Yes Then
                     SetThemeAppProperties(3)
                 Else
                     End
